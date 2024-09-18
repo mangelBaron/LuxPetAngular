@@ -1,0 +1,109 @@
+header{
+    display: flex;
+    border: 1px solid black;
+    background-color:#e4d9bc ;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header span{
+    color:white;
+}
+
+#logo  a{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    font-size: 75px;
+    margin-left: 20px;
+    font-family: "Courgette", cursive;
+}
+
+header ul{
+    display: flex;
+    list-style: none;
+    margin-right: 20px;
+    align-items: center;
+    margin-bottom: 0;
+    font-family: "Nunito", sans-serif;
+}
+
+header li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    font-family: "Nunito", sans-serif;
+}
+
+header i{
+    display: flex;
+    font-size: 25px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    font-family: "Nunito", sans-serif;
+}
+
+header a{
+    font-family: "Nunito", sans-serif;
+    text-decoration: none;
+    color: #242331;
+    font-size: 25px;
+    font-family: "Nunito", sans-serif;
+}
+
+nav a:hover{
+    color: #fefefe;
+}
+
+
+
+
+/* From Uiverse.io by gharsh11032000 */ 
+.button {
+    cursor: pointer;
+    position: relative;
+    padding: 10px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #ddc47d;
+    color: rgb(8, 8, 8);
+    border: 2px solid rgb(193, 163, 98);
+    border-radius: 34px;
+    background-color: transparent;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+  }
+  
+  .button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: inherit;
+    scale: 0;
+    z-index: -1;
+    background-color: #ddc47d;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .button:hover::before {
+    scale: 3;
+  }
+  
+  .button:hover {
+    color: #212121;
+    scale: 1.1;
+    box-shadow: 0 0px 20px rgba(193, 163, 98,0.4);
+  }
+  
+  .button:active {
+    scale: 1;
+  }
+  
