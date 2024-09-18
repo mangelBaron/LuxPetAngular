@@ -1,0 +1,16 @@
+
+<div id="container">
+    <div id="info" class="form_area">
+        <h1 class="title">Información de la mascota</h1>
+        <img th:src="${mascota.foto}" alt="Foto" class="form_style">
+        <p class="form_group"><strong>Nombre: </strong> <span th:text=" ${mascota.nombre}"></span></p>
+        <p class="form_group"><strong>Raza: </strong> <span th:text=" ${mascota.raza}"></span></p>
+        <p class="form_group"><strong>Edad: </strong> <span th:text=" ${mascota.edad}"></span></p>
+        <p class="form_group"><strong>Enfermedad: </strong> <span th:text=" ${mascota.enfermedad}"></span></p>
+        <p class="form_group"><strong>Estado: </strong> <span th:text=" ${mascota.estado}"></span></p>
+        <p class="form_group"><strong>Dueño: </strong> <span th:text=" ${cliente.nombre}"></span></p>
+        <div id="botones">
+            <a th:href="@{/mascota/all}" class="btn"><strong>Volver</strong></a>
+        </div>
+    </div>
+</div>

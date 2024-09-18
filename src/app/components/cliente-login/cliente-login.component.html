@@ -1,0 +1,15 @@
+<div class="center-container">  
+    <div class="container">
+        <div class="heading">Iniciar Sesión</div>
+        <form action="/login/" method="post" class="form">
+            <input required="" class="input" type="text" name="cedula" id="cedula" placeholder="Ingresa tu cédula">
+            
+            <input class="login-button" type="submit" value="Iniciar Sesión">
+
+            <p>Eres Veterinario? <a href="/login/loginVeterinario">Ingresa aquí</a></p>
+        </form>
+        <div id="alerta" style="color: red;">
+          <p th:if="${error}" th:text="${error}"></p>
+      </div>
+    </div>
+</div>
