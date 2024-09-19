@@ -1,0 +1,226 @@
+#mascotasTitle{
+    display: flex;
+    justify-content: center;
+    font-family: "Nunito", sans-serif;
+}
+
+main table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-family: "Nunito", sans-serif;
+}
+
+
+main th{
+    font-family: "Nunito", sans-serif;
+    border: 2px solid black;
+    font-size: 20px;
+    margin-bottom: 20px;
+    background-color: #ddc47d;
+}
+
+main td{
+    font-family: "Nunito", sans-serif;
+    border: 2px solid black;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    background-color: #e4d9bc;
+}
+
+main td a{
+    text-decoration: none;
+    color: #242331
+}
+
+main td a:hover{
+    color: #ddc47d;
+}
+
+main button{
+    font-family: "Nunito", sans-serif;
+    align-items: center;
+    font-size: 16px;
+    padding: 8px;
+    background-color: #ddc47d;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer; 
+}
+
+main button:hover{
+    background-color: #efefef;
+}
+
+
+main{
+    margin: 30px;
+}
+main h1{
+    font-family: "Nunito", sans-serif;
+    color: #ddc47d;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+#botonAgregar{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-family: "Nunito", sans-serif;
+}
+
+
+#botonEditar a{
+    font-family: "Nunito", sans-serif;
+    align-items: center;
+    font-size: 16px;
+    padding: 8px;
+    background-color: #ddc47d;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer; 
+    color:#242331;
+    text-decoration: none;
+
+}
+
+#editarBtn{
+    font-family: "Nunito", sans-serif;
+    align-items: center;
+    font-size: 16px;
+    padding: 8px;
+    background-color: #3C6E71;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer; 
+    color:white;
+    text-decoration: none;
+
+}
+
+#editarBtn:hover{
+    background-color: #50888b;
+
+}
+
+#eliminarBtn:hover{
+    background-color: rgb(240, 50, 88);
+    font-family: "Nunito", sans-serif;
+
+}
+
+
+#eliminarBtn{
+    font-family: "Nunito", sans-serif;
+    align-items: center;
+    font-size: 16px;
+    padding: 8px;
+    background-color: crimson;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer; 
+    color:white;
+    text-decoration: none;
+    font-family: "Nunito", sans-serif;
+    
+
+}
+
+
+
+
+
+#botonAgregar a{
+    font-family: "Nunito", sans-serif;
+    align-items: center;
+    font-size: 20px;
+    padding: 10px;  
+    background-color: #ddc47d;
+    border: none;
+    
+    border-radius: 12px;
+    cursor: pointer; 
+    color:#242331;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+#botonAgregar a:hover{
+    background-color: #efefef;
+}
+
+
+
+.Btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: 0.3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: white;
+  }
+  
+  /* plus sign */
+  .sign {
+    width: 100%;
+    transition-duration: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sign svg {
+    width: 17px;
+  }
+  
+  .sign svg path {
+    fill: black;
+  }
+  /* text */
+  .text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: 0.3s;
+  }
+  /* hover effect on button width */
+  .Btn:hover {
+    background-color: black;
+    width: 150px;
+    border-radius: 40px;
+    transition-duration: 0.3s;
+  }
+  
+  .Btn:hover .sign {
+    width: 30%;
+    transition-duration: 0.3s;
+    padding-left: 20px;
+  }
+  
+  .Btn:hover .sign svg path {
+    fill: white;
+  }
+  
+  /* hover effect button's text */
+  .Btn:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: 0.3s;
+    padding-right: 10px;
+  }
+  /* button click effect*/
+  .Btn:active {
+    transform: translate(2px, 2px);
+  }
