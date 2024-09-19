@@ -15,6 +15,8 @@ import { ClientFormPageComponent } from './pages/client-form-page/client-form-pa
 import { PetFormPageComponent } from './pages/pet-form-page/pet-form-page.component';
 import { ClientPortalPageComponent } from './pages/client-portal-page/client-portal-page.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { VeterinaryLoginComponent } from './components/veterinary-login/veterinary-login.component';
+import { VeterinaryLoginPageComponent } from './pages/veterinary-login-page/veterinary-login-page.component';
 
 // Definir las rutas
 export const routes: Routes = [
@@ -32,6 +34,7 @@ export const routes: Routes = [
   { path: 'pet-form', component: PetFormPageComponent },
   { path: 'client-portal', component: ClientPortalPageComponent },
   { path: 'landing', component: LandingPageComponent },
+  { path: 'vet-login', component: VeterinaryLoginPageComponent },
 
   // Ruta por defecto: redirigir a 'landing' si no se especifica ruta
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
