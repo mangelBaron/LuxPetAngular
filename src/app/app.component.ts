@@ -12,11 +12,12 @@ import { PetInfoPageComponent } from "./pages/pet-info-page/pet-info-page.compon
 import { ClientFormPageComponent } from "./pages/client-form-page/client-form-page.component";
 import { PetFormPageComponent } from "./pages/pet-form-page/pet-form-page.component";
 import { ClientPortalPageComponent } from "./pages/client-portal-page/client-portal-page.component";
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';     
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, InfoLandingComponent, HeaderLoginComponent, ClienteLoginComponent, ClientLoginPageComponent, PetListPageComponent, ClientListPageComponent, PetInfoPageComponent, ClientFormPageComponent, PetFormPageComponent, ClientPortalPageComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, InfoLandingComponent, HeaderLoginComponent, ClienteLoginComponent, ClientLoginPageComponent, PetListPageComponent, ClientListPageComponent, PetInfoPageComponent, ClientFormPageComponent, PetFormPageComponent, ClientPortalPageComponent, LandingPageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
