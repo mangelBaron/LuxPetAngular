@@ -1,0 +1,40 @@
+<nav>
+    <div class="logo">
+        <h4>Lux<span>Pet</span></h4>
+    </div>  
+
+
+    <div id="infoCliente">
+<div class="card-client">
+    <div class="user-picture">
+        <!-- Aquí podrías incluir una imagen o un ícono SVG del cliente -->
+        <svg> <!-- Ejemplo de SVG --> </svg>
+    </div>
+    <p class="name-client">
+        <span th:text="${cliente.nombre}"></span>
+    </p>
+    <p class="form_group">
+        <span th:text="${cliente.cedula}"></span>
+    </p>
+    <p class="form_group">
+        <span th:text="${cliente.correo}"></span>
+    </p>
+    <p class="form_group">
+        <span th:text="${cliente.celular}"></span>
+    </p>
+    <!-- Añade iconos o enlaces para redes sociales si es necesario -->
+    <div class="social-media">
+        <a href="#" class="tooltip-social"> <!-- Enlace de ejemplo -->
+            <svg> <!-- Ejemplo de SVG para red social --> </svg>
+            <span class="tooltip-social">Tooltip text</span>
+        </a>
+        <!-- Más enlaces si es necesario -->
+    </div>
+</div>
+</div>
+
+   
+
+<a href="/login/" class="btn">Cerrar Sesión</a>
+    
+</nav>

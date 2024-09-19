@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+/* Colores: 
+amarillo #ddc47d
+  azul oscuro: 242331*/
+
+
+  
+
+*{
+    margin:0;
+    box-sizing: border-box;
+}
+/*
+*/
+html, body{ 
+    min-height: 100%;
+    background-color:#242331;
+}
+
+
+main{
+    flex:1;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.mg-10{
+    margin: 10px;
+}
+
+.mg-05{
+    margin: 5px;
+}
+
+.center{
+    justify-content: center;
+    align-items: center;
+}
