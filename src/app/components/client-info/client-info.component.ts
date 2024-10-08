@@ -3,6 +3,7 @@ import { Cliente } from '../../model/cliente';
 import { ClientService } from '../../services/client.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PetService } from '../../services/pet.service';
+import { mergeMap } from 'rxjs';
 
 @Component({
   selector: 'app-client-info',
@@ -24,24 +25,32 @@ private mascotaService: PetService
 ){}
 
 
-ngOnit(){
-
-  this.route.params.subscribe(params => {
-    const id = Number(params.get('id'));
+ngOnInit(): void {
+  console.log("ngOnInit de ClientFormPageComponent");
   
-    this.clientService.findById(id).pipe(
-      mergeMap(
-        (clientInfo) => {
-          this.client = clientInfo;
-          return this.mascotaService.findClientPet(this.client.id);
-        }
-      )
-    )
-
-}
-
-ngOnChanges(){
-
-}
+      this.route.params.subscribe(params => {
+  
+        const id = Number(params['get']('id'));
+  
+          this.clientService.findById(id).pipe(
+            mergeMap(
+              (clientInfo) => {
+                this.client = clientInfo;
+                return this.mascotaService.findClientPet(this.client.id);
+                
+              }
+            )
+          ).subscribe(
+            (pets) => {
+              this.client.mascotas = pets;  
+            }
+          )
+     });
+    }
+  
+  
+    ngOnChanges(): void {
+      console.log(this.client);
+    }
 
 }

@@ -28,13 +28,14 @@ export const routes: Routes = [
   { path: 'cliente-login', component: ClienteLoginComponent },
   { path: 'client-login', component: ClientLoginPageComponent },
   { path: 'pet-list', component: PetListPageComponent },
-  { path: 'client-list', component: ClientListPageComponent },
+  { path: 'clients', component: ClientListPageComponent },
   { path: 'pet-info', component: PetInfoPageComponent },
   { path: 'client-form', component: ClientFormPageComponent },
   { path: 'pet-form', component: PetFormPageComponent },
   { path: 'client-portal', component: ClientPortalPageComponent },
   { path: 'landing', component: LandingPageComponent },
   { path: 'vet-login', component: VeterinaryLoginPageComponent },
+
 
   // Ruta por defecto: redirigir a 'landing' si no se especifica ruta
   { path: '', redirectTo: '/landing', pathMatch: 'full' },

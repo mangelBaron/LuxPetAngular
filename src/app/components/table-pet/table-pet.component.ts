@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { Mascota } from '../../model/mascota';
+import { CommonModule } from '@angular/common';
+
+
 
 @Component({
   selector: 'app-table-pet',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './table-pet.component.html',
   styleUrl: './table-pet.component.css'
 })

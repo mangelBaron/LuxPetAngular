@@ -1,6 +1,6 @@
 import { Mascota } from "./mascota";
 export interface Cliente {
-    id?: number;
+    id: number;
     cedula: string;
     nombre: string;
     correo: string;
