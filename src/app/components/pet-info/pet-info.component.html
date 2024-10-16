@@ -1,16 +1,26 @@
-
-<div id="container">
-    <div id="info" class="form_area">
+<main>
+    <div id="container">
+      <div id="info" class="form_area">
         <h1 class="title">Información de la mascota</h1>
-        <img th:src="${mascota.foto}" alt="Foto" class="form_style">
-        <p class="form_group"><strong>Nombre: </strong> <span th:text=" ${mascota.nombre}"></span></p>
-        <p class="form_group"><strong>Raza: </strong> <span th:text=" ${mascota.raza}"></span></p>
-        <p class="form_group"><strong>Edad: </strong> <span th:text=" ${mascota.edad}"></span></p>
-        <p class="form_group"><strong>Enfermedad: </strong> <span th:text=" ${mascota.enfermedad}"></span></p>
-        <p class="form_group"><strong>Estado: </strong> <span th:text=" ${mascota.estado}"></span></p>
-        <p class="form_group"><strong>Dueño: </strong> <span th:text=" ${cliente.nombre}"></span></p>
+  
+        <!-- Imagen de la mascota -->
+        <img [src]="selectedPet.foto" alt="Foto" class="form_style" *ngIf="selectedPet">
+  
+        <!-- Detalles de la mascota -->
+        <p class="form_group"><strong>Nombre: </strong> <span>{{ selectedPet?.nombre }}</span></p>
+        <p class="form_group"><strong>Raza: </strong> <span>{{ selectedPet?.raza }}</span></p>
+        <p class="form_group"><strong>Edad: </strong> <span>{{ selectedPet?.edad }}</span></p>
+        <p class="form_group"><strong>Enfermedad: </strong> <span>{{ selectedPet?.enfermedad }}</span></p>
+        <p class="form_group"><strong>Estado: </strong> <span>{{ selectedPet?.estado }}</span></p>
+  
+        <!-- Detalles del dueño -->
+        <p class="form_group"><strong>Dueño: </strong> <span>{{ selectedPet?.cliente?.nombre }}</span></p>
+  
+        <!-- Botón de volver -->
         <div id="botones">
-            <a th:href="@{/mascota/all}" class="btn"><strong>Volver</strong></a>
+          <a [routerLink]="['/pet-list']" class="btn"><strong>Volver</strong></a>
         </div>
+      </div>
     </div>
-</div>
+  </main>
+  

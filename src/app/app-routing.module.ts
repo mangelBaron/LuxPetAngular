@@ -29,7 +29,7 @@ export const routes: Routes = [
   { path: 'client-login', component: ClientLoginPageComponent },
   { path: 'pet-list', component: PetListPageComponent },
   { path: 'clients', component: ClientListPageComponent },
-  { path: 'pet-info', component: PetInfoPageComponent },
+  { path: 'mascota/:id', component: PetInfoPageComponent },
   { path: 'client-form', component: ClientFormPageComponent },
   { path: 'pet-form', component: PetFormPageComponent },
   { path: 'client-portal', component: ClientPortalPageComponent },

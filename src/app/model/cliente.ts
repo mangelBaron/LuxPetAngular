@@ -5,5 +5,5 @@ export interface Cliente {
     nombre: string;
     correo: string;
     celular: string;
-    mascotas: Mascota[];
+    mascotas ?: Mascota[];
 }
