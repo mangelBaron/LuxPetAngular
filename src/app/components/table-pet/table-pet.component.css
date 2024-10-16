@@ -231,3 +231,17 @@ main h1{
     transform: translate(2px, 2px);
   }
 
+  #searchBar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#searchBar input {
+    width: 30%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: "Nunito", sans-serif;
+}

@@ -12,7 +12,14 @@
             </button>
         </a>
     </div>
-    
+
+    <!-- Campos de búsqueda -->
+    <div id="searchBar">
+        <input type="text" placeholder="Buscar por nombre de mascota" [(ngModel)]="searchMascota" (input)="filterMascotas()" />
+        <input type="text" placeholder="Buscar por nombre de cliente" [(ngModel)]="searchCliente" (input)="filterMascotas()" />
+        <input type="text" placeholder="Buscar por nombre de veterinario" [(ngModel)]="searchVeterinario" (input)="filterMascotas()" />
+    </div>
+
     <div id="botonAgregar">
         <a type="button" th:href="@{/mascota/add}">Agregar mascota</a>
     </div>
@@ -27,7 +34,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let mascota of mascotasList">
+                <tr *ngFor="let mascota of filteredMascotas">
                     <td>{{ mascota.nombre }}</td>
                     <td>{{ mascota.raza }}</td>
                     <td>
