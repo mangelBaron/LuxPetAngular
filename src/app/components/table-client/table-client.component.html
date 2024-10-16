@@ -1,6 +1,6 @@
 <div id="Title">
     <h1>Listado de dueños de mascotas</h1>
-    <a href="/mascota/all">
+    <a [routerLink]="['/pet-list']">
         <button class="Btn">
           <div class="sign">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
@@ -18,7 +18,8 @@
     <a type="button" th:href="@{/cliente/add}">Agregar dueño</a>
 </div>
 
-<div>
+<main>
+  <div>
     <table>
         <thead>
             <tr>
@@ -41,3 +42,4 @@
         </tbody>
     </table>
 </div>
+</main>

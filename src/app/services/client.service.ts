@@ -13,7 +13,9 @@ export class ClientService {
   ) { }
 
 
-  findAll(): Observable<Cliente[]> {
+  findAll(): Observable<Cliente[]> { 
+    console.log("findAll de ClientService");
+    console.log(this.http.get<Cliente[]>('http://localhost:8090/cliente/all'));
     return this.http.get<Cliente[]>('http://localhost:8090/cliente/all');
   }
 

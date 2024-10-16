@@ -14,7 +14,6 @@ export class PetService {
 
 
   findById(id: number): Observable<Mascota>{
-
     return  this.http.get<Mascota>('http://localhost:8090/mascota/find/'+ id);
 
   }
