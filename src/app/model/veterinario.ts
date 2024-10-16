@@ -8,4 +8,5 @@ export interface Veterinario {
     numAtenciones: number;
     nombre: string;
     mascotas: Mascota[];
+    
 }
