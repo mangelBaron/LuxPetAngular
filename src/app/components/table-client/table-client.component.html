@@ -28,15 +28,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr th:each="cliente : ${clientes}">
-                <td th:text="${cliente.nombre}"></td>
-                <td th:text="${cliente.cedula}"></td>
+            <tr *ngFor="let client of clientList">
+                <td>{{ client.nombre }}</td>
+                <td>{{ client.cedula }}</td>
                 <td>
-                    <a th:href="@{/cliente/find/{id}(id=${cliente.id})}"> <button>Ver detalles</button></a>
-                    <a th:href="@{/cliente/update/{id}(id=${cliente.id})}"><button id="editarBtn">Editar</button></a>
-                    <a th:href="@{/cliente/delete/{id}(id=${cliente.id})}"><button id="eliminarBtn">Eliminar</button></a>
+                  <button (click)="mostrarCliente(client)">Ver detalles</button>
+                  <button id="editarBtn">Editar</button>
+                  <button id="eliminarBtn" (click)="eliminarCliente(client)">Eliminar</button>
                 </td>
-            </tr>
+              </tr>
+ 
         </tbody>
     </table>
 </div>

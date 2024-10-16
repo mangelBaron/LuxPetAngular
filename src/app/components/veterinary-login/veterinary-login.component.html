@@ -5,7 +5,7 @@
             <input required="" class="input" type="text" name="cedula" id="cedula" placeholder="Ingresa tu cédula">
             <input required="" class="input" type="password" name="cedula" id="cedula" placeholder="Ingresa su contraseña">
 
-            <input class="login-button" type="submit" value="Iniciar Sesión">
+            <button class="login-button" type="button" [routerLink]="['/pet-list']">Iniciar Sesión</button>
         </form>
         <div id="alerta" style="color: red;">
           <p th:if="${error}" th:text="${error}"></p>

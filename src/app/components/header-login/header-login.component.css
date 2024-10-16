@@ -11,11 +11,12 @@ header span{
 }
 #logo  h1{
     display: flex;
-    align-items: center;
+    justify-content: center;
     margin: 10px;
     width: 100px;
     height: 100px;
     font-size: 75px;
     margin-left: 20px;
     font-family: "Courgette", cursive;
+    cursor:pointer;
 }
