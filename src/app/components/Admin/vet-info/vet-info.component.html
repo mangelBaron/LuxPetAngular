@@ -1,0 +1,43 @@
+
+<main>
+
+
+    <div id="container" class="form_area">
+        <div id="titulo">
+            <h1 class="title">Información del veterinario</h1>
+        </div>
+        <div id="info">
+    
+            <ng-container *ngIf="vet">
+                <p class="form_group"><strong>Nombre:</strong> <span>{{vet.nombre}}</span></p>
+                <p class="form_group"><strong>Cedula:</strong> <span>{{vet.cedula}}</span></p>
+                <p class="form_group"><strong>Especialidad:</strong> <span>{{vet.especialidad}}</span></p>
+                <p class="form_group"><strong>Celular:</strong> <span>{{vet.numAtenciones}}</span></p>
+            </ng-container>
+    
+            <p class="form_group"><strong>Mascotas:</strong></p>
+            <table class="form_style">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Raza</th>
+                        <th scope="col">Acciones</th> <!-- Nueva columna para el botón -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let mascota of vet.mascotas">
+                        <td>{{mascota.nombre}}</td>
+                        <td>{{mascota.raza}}</td>
+                        <td>
+                            <a [routerLink]="['/mascota/find', mascota?.id]" class="btn"><strong>Ver detalles</strong></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    
+            <div id="botones">
+                <a [routerLink]="['/admin']" class="btn"><strong>Volver</strong></a>
+            </div>
+        </div>
+    </div>
+    </main>

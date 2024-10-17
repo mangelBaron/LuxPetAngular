@@ -1,0 +1,14 @@
+<div class="center-container">  
+    <div class="container">
+        <div class="heading">Iniciar Sesión</div>
+      
+            <input required="" class="input" type="text" name="cedula" id="cedula" placeholder="Ingresa tu cédula">
+            <input required="" class="input" type="password" name="cedula" id="cedula" placeholder="Ingresa su contraseña">
+
+            <button class="login-button" type="button" [routerLink]="['/admin']">Iniciar Sesión</button>
+       
+        <div id="alerta" style="color: red;">
+          <p th:if="${error}" th:text="${error}"></p>
+      </div>
+    </div>
+</div>

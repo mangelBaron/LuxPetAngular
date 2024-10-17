@@ -28,6 +28,10 @@ export class PetService {
     return this.http.get<Mascota[]>('http://localhost:8090/mascota/findClient/'+ id);
   }
 
+  findVetPet(id: number): Observable<Mascota[]>{
+    return this.http.get<Mascota[]>('http://localhost:8090/mascota/findVet/'+ id);
+  }
+
 
   deleteById(id: number) {
     return this.http.delete('http://localhost:8090/mascota/delete/' + id).subscribe();

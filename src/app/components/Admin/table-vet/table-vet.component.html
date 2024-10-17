@@ -1,0 +1,40 @@
+<!--    id: number;
+    cedula: string;
+    contrasenia: string;
+    especialidad: string;
+    foto: string;
+    numAtenciones: number;
+    nombre: string;
+    mascotas: Mascota[];
+    -->
+    
+
+<div id="botonAgregar">
+    <a class="button" [routerLink]="['admin/form']">Agregar  veterinario</a>
+</div>
+
+<main>
+  <div>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Cedula</th>
+                <th scope="col">Acciones</th> <!-- Nueva columna para el botón -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let vet of vetList">
+                <td>{{ vet.nombre }}</td>
+                <td>{{ vet.cedula }}</td>
+                <td>
+                  <button [routerLink]="['/admin/', vet.id]">Ver detalles</button>
+                  <button [routerLink]="['/admin/update/', vet.id]" id="editarBtn">Editar</button>
+                  <button id="eliminarBtn" (click)="eliminarVeterinario(vet)">Eliminar</button>
+                </td>
+              </tr>
+ 
+        </tbody>
+    </table>
+</div>
+</main>
