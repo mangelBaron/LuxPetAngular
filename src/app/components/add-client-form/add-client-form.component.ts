@@ -1,26 +1,22 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Cliente } from '../../model/cliente';
 import { ClientService } from '../../services/client.service';
+import { FormsModule } from '@angular/forms';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-add-client-form',
   standalone: true,
-  imports: [],
+  imports: [FormsModule, RouterLink],
   templateUrl: './add-client-form.component.html',
   styleUrl: './add-client-form.component.css'
 })
 export class AddClientFormComponent {
 
 
-  @Output()
-  addClientEvent = new EventEmitter<Cliente>();
-
-  @Output()
-  ocultarFormularioEvent = new EventEmitter<boolean>();
-
   sendClient!: Cliente;
 
-  formClient: Cliente = {
+  formularioCliente: Cliente = {
     id: 0,
     cedula: '',
     nombre: '',
@@ -30,43 +26,25 @@ export class AddClientFormComponent {
   };
 
 
-/* 
-
-
-
-*/
-
-mostrarForm: boolean = false;
-
-selectedClient!: Cliente;
-
-clientList!: Cliente[];
-
 constructor(
-private clientService: ClientService
+private clientService: ClientService,
+private router: Router,
+private route: ActivatedRoute
 ){}
 
 
-  addClientForm(form:any){
-    console.log(this.formClient);
 
-    this.sendClient = Object.assign({}, this.formClient);
-
-    this.addClientEvent.emit(this.sendClient);
-
-  }
-
-  addClient(form:any){
-    this.sendClient  = Object.assign({}, this.formClient);
-
-    this.addClientEvent.emit(this.sendClient);
-  }
-
-
-  cancelar(){
-    this.ocultarFormularioEvent.emit(false);
-  }
-
+crearCliente(): void {
+  this.clientService.addCliente(this.formularioCliente).subscribe(
+    (response) => {
+      console.log('Cliente creado con éxito', response);
+      this.router.navigate(['/cliente/all']);
+    },
+    (error) => {
+      console.error('Error al crear el cliente', error);
+    }
+  );
+}
 
 
 }

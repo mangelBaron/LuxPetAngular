@@ -1,35 +1,43 @@
+
+<main>
+
+
 <div id="container" class="form_area">
     <div id="titulo">
         <h1 class="title">Información del dueño</h1>
     </div>
     <div id="info">
-        <p class="form_group"><strong>Nombre:</strong> <span th:text="${cliente.nombre}"></span></p>
-        <p class="form_group"><strong>Cedula:</strong> <span th:text="${cliente.cedula}"></span></p>
-        <p class="form_group"><strong>Correo:</strong> <span th:text="${cliente.correo}"></span></p>
-        <p class="form_group"><strong>Celular:</strong> <span th:text="${cliente.celular}"></span></p>
-      
+
+        <ng-container *ngIf="client">
+            <p class="form_group"><strong>Nombre:</strong> <span>{{client.nombre}}</span></p>
+            <p class="form_group"><strong>Cedula:</strong> <span>{{client.cedula}}</span></p>
+            <p class="form_group"><strong>Correo:</strong> <span>{{client.correo}}</span></p>
+            <p class="form_group"><strong>Celular:</strong> <span>{{client.celular}}</span></p>
+        </ng-container>
+
         <p class="form_group"><strong>Mascotas:</strong></p>
         <table class="form_style">
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Raza</th>
-                    <th>Acciones</th> <!-- Nueva columna para el botón -->
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Raza</th>
+                    <th scope="col">Acciones</th> <!-- Nueva columna para el botón -->
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="mascota : ${cliente.mascotas}">
-                    <td th:text="${mascota.nombre}"></td>
-                    <td th:text="${mascota.raza}"></td>
+                <tr *ngFor="let mascota of client.mascotas">
+                    <td>{{mascota.nombre}}</td>
+                    <td>{{mascota.raza}}</td>
                     <td>
-                        <a th:href="@{/mascota/find/{id}(id=${mascota.id})}" class="btn"> <strong>Ver detalles</strong></a>
+                        <a [routerLink]="['/mascota/find', mascota?.id]" class="btn"><strong>Ver detalles</strong></a>
                     </td>
                 </tr>
             </tbody>
         </table>
 
         <div id="botones">
-            <a th:href="@{/cliente/all}" class="btn"><strong>Volver</strong></a>
+            <a [routerLink]="['/clients']" class="btn"><strong>Volver</strong></a>
         </div>
     </div>
 </div>
+</main>

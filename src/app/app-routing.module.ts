@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 // Importar los componentes que mencionaste
 import { HeaderComponent } from './components/header/header.component';
@@ -17,6 +18,13 @@ import { ClientPortalPageComponent } from './pages/client-portal-page/client-por
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { VeterinaryLoginComponent } from './components/veterinary-login/veterinary-login.component';
 import { VeterinaryLoginPageComponent } from './pages/veterinary-login-page/veterinary-login-page.component';
+import { ClientInfoPageComponent } from './pages/client-info-page/client-info-page.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+import { UpdateClientFormComponent } from './components/update-client-form/update-client-form.component';
+import { UpdateClientFormPageComponent } from './pages/update-client-form-page/update-client-form-page.component';
 
 // Definir las rutas
 export const routes: Routes = [
@@ -35,7 +43,8 @@ export const routes: Routes = [
   { path: 'client-portal', component: ClientPortalPageComponent },
   { path: 'landing', component: LandingPageComponent },
   { path: 'vet-login', component: VeterinaryLoginPageComponent },
-
+  {path: 'client/:id', component: ClientInfoPageComponent},
+  {path: 'client/update/:id', component: UpdateClientFormPageComponent},
 
   // Ruta por defecto: redirigir a 'landing' si no se especifica ruta
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
@@ -46,7 +55,11 @@ export const routes: Routes = [
 
 // Configuración del módulo de rutas
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [BrowserModule,
+    FormsModule,
+    HttpClientModule],
+  
+  exports: [],
+
 })
 export class AppRoutingModule { }

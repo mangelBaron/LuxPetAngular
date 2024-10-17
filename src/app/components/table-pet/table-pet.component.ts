@@ -17,30 +17,34 @@ import { PetService } from '../../services/pet.service';
 export class TablePetComponent {
 
   selectedMascota?: Mascota;  
-  mascotasList !: Mascota[];
+  petList !: Mascota[];
 
-  constructor(private petService: PetService) { }
+  constructor(
+    private petService: PetService
+    ) { }
 
-  ngOnInit(): void {
-    this.petService.findAll().subscribe(
-      (pets) => {
-        this.mascotasList = pets;
-      },
-      (error) => {
-        console.error('Error al obtener mascotas:', error);
-      } 
-    )
-  }
-
-  mostrarMascota(mascota: Mascota): void {
-    this.selectedMascota = mascota;
-  }
-
-  deleteMascota(mascota: Mascota): void {
-    this.petService.deleteById(mascota.id!).subscribe(() => {
-      this.mascotasList = this.mascotasList.filter(m => m !== mascota);
-    });
-  }
+    ngOnInit(): void {
+      this.petService.findAll().subscribe(
+        (mascotas) => {
+          this.petList = mascotas;
+        }
+      );
+    }
+  
+    mostrarMascota(mascota: Mascota) {
+      this.selectedMascota = mascota;
+    }
+  
+    eliminarMascota(mascota: Mascota) {
+      var index = this.petList.indexOf(mascota);
+      this.petList.splice(index, 1);
+      this.petService.deleteById(mascota.id);
+    }
+  
+    agregarMascota(mascota: Mascota) {
+      this.petList.push(mascota);
+      this.petService.addPet(mascota);
+    }
   
 
 }

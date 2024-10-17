@@ -14,29 +14,31 @@
     </div>
     
     <div id="botonAgregar">
-        <a type="button" th:href="@{/mascota/add}">Agregar mascota</a>
+    
+
+        <a type="button" [routerLink]="['/pet-form']">Agregar mascota</a>
     </div>
     
     <div>
         <table>
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Raza</th>
-                    <th>Acciones</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Raza</th>
+                    <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let mascota of mascotasList">
-                    <td>{{ mascota.nombre }}</td>
-                    <td>{{ mascota.raza }}</td>
-                    <td>
-                        <a [routerLink]="['/mascota', mascota.id]"><button>Ver detalles</button></a>
-                        <a [routerLink]="['/mascota/update', mascota.id]"><button id="editarBtn">Editar</button></a>
-                        <a [routerLink]="['/mascota/delete', mascota.id]"><button id="eliminarBtn">Eliminar</button></a>
-                    </td>
+                <tr *ngFor="let mascota of petList">
+                  <td>{{ mascota.nombre }}</td>
+                  <td>{{ mascota.raza }}</td>
+                  <td>
+                    <a [routerLink]="['/mascota', mascota.id]"><button>Ver detalles</button></a>
+                    <a [routerLink]="['/mascota/update', mascota.id]"><button id="editarBtn">Editar</button></a>
+                    <button id="eliminarBtn" (click)="eliminarMascota(mascota)">Eliminar</button>
+                  </td>
                 </tr>
-            </tbody>
+              </tbody>
         </table>
     </div>
 </main>

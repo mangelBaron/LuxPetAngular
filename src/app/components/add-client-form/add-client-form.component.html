@@ -4,33 +4,33 @@
         
     <div id="formulario-container" class="form_area">
         <h2 class="title">Agregar Dueño</h2>
-        <form th:object="${cliente}" th:action="@{/cliente/add}" method="post"> 
+        <form (ngSubmit)="crearCliente()" #clienteForm="ngForm">
             <div class="form_group">
-                <label for="nombre">Nombre:</label>
-                <input th:field="*{nombre}" type="text" id="nombre" placeholder="Ingresa el nombre" required class="form_style">    
+              <label for="nombre">Nombre:</label>
+              <input [(ngModel)]="formularioCliente.nombre" name="nombre" type="text" id="nombre" placeholder="Ingresa el nombre" required class="form_style">
             </div>
-            
+          
             <div class="form_group">
-                <label for="cedula">Cedula:</label>
-                <input th:field="*{cedula}" type="text" id="cedula" placeholder="Ingresa la cedula" required class="form_style">
+              <label for="cedula">Cedula:</label>
+              <input [(ngModel)]="formularioCliente.cedula" name="cedula" type="text" id="cedula" placeholder="Ingresa la cedula" required class="form_style">
             </div>
-           
+          
             <div class="form_group">
-                <label for="correo">Correo:</label>
-                <input th:field="*{correo}" type="email" id="correo" placeholder="Ingresa el correo" required class="form_style">
+              <label for="correo">Correo:</label>
+              <input [(ngModel)]="formularioCliente.correo" name="correo" type="email" id="correo" placeholder="Ingresa el correo" required class="form_style">
             </div>
-            
+          
             <div class="form_group">
-                <label for="celular">Celular:</label>
-                <input th:field="*{celular}" type="number" id="celular" placeholder="Ingresa el número celular" class="form_style">
+              <label for="celular">Celular:</label>
+              <input [(ngModel)]="formularioCliente.celular" name="celular" type="number" id="celular" placeholder="Ingresa el número celular" class="form_style">
             </div>
-                
+          
             <div id="botones">
-               <a th:href="@{/cliente/all}" class="btn">Volver</a>
-                <div id="enviarBtn">
-                    <button type="submit" class="btn">Crear</button>
-                </div>
+              <a [routerLink]="['/client/all']" class="btn">Volver</a>
+              <div id="enviarBtn">
+                <button type="submit" class="btn">Crear</button>
+              </div>
             </div>
-        </form>
+          </form>
     </div>
 </div>

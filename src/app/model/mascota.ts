@@ -2,7 +2,7 @@ import { Cliente } from "./cliente";
 import { Veterinario } from "./veterinario";
 import { Tratamiento } from "./tratamiento";
 export interface Mascota {
-    id?: number;
+    id: number;
     nombre: string;
     raza: string;
     edad: number;

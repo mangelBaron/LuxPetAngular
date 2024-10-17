@@ -22,13 +22,23 @@ export class PetService {
     return this.http.get<Mascota[]>('http://localhost:8090/mascota/all');
   }
 
+
+
   findClientPet(id: number): Observable<Mascota[]>{
     return this.http.get<Mascota[]>('http://localhost:8090/mascota/findClient/'+ id);
   }
 
 
   deleteById(id: number) {
-    return this.http.delete('http://localhost:8090/mascota/delete/' + id);
+    return this.http.delete('http://localhost:8090/mascota/delete/' + id).subscribe();
+  }
+
+  addPet(pet: Mascota): Observable<Mascota> {
+    return this.http.post<Mascota>('http://localhost:8090/mascota/add', pet);
+}
+
+  updatePet(id: number, pet: Mascota): Observable<Mascota> {
+    return this.http.put<Mascota>('http://localhost:8090/mascota/update/'+ id, pet.id);
   }
 
 }

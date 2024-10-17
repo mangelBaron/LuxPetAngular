@@ -15,7 +15,7 @@
 </div>
 
 <div id="botonAgregar">
-    <a type="button" th:href="@{/cliente/add}">Agregar dueño</a>
+    <a class="button" [routerLink]="['client/form']">Agregar dueño</a>
 </div>
 
 <main>
@@ -33,8 +33,8 @@
                 <td>{{ client.nombre }}</td>
                 <td>{{ client.cedula }}</td>
                 <td>
-                  <button (click)="mostrarCliente(client)">Ver detalles</button>
-                  <button id="editarBtn">Editar</button>
+                  <button [routerLink]="['/client/', client.id]">Ver detalles</button>
+                  <button [routerLink]="['/client/update/', client.id]" id="editarBtn">Editar</button>
                   <button id="eliminarBtn" (click)="eliminarCliente(client)">Eliminar</button>
                 </td>
               </tr>

@@ -43,12 +43,12 @@ export class TableClientComponent {
 
   agregarCliente(client: Cliente){
     this.clientList.push(client);
-    this.clientService.addClient(client);
+    this.clientService.addCliente(client);
   }
 
   eliminarCliente(client: Cliente){
       var index = this.clientList.indexOf(client);
-      this.clientList.splice(index, 1);
+      this.clientList.splice(index,  1);
       if (client.id !== undefined) {
         this.clientService.deleteById(client.id);
       }

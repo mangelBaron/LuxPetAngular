@@ -1,14 +1,16 @@
 import { Component, Input } from '@angular/core';
 import { Cliente } from '../../model/cliente';
 import { ClientService } from '../../services/client.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { PetService } from '../../services/pet.service';
 import { mergeMap } from 'rxjs';
+import { CommonModule } from '@angular/common';
+import { Mascota } from '../../model/mascota';
 
 @Component({
   selector: 'app-client-info',
   standalone: true,
-  imports: [],
+  imports: [RouterModule, CommonModule],
   templateUrl: './client-info.component.html',
   styleUrl: './client-info.component.css' 
 })
@@ -16,6 +18,7 @@ export class ClientInfoComponent {
 
 @Input()
 client! : Cliente;
+petList: Mascota[] = [];
 
 constructor(
 private clientService: ClientService,
@@ -30,7 +33,7 @@ ngOnInit(): void {
   
       this.route.params.subscribe(params => {
   
-        const id = Number(params['get']('id'));
+        const id = Number(params['id']);
   
           this.clientService.findById(id).pipe(
             mergeMap(
@@ -42,15 +45,11 @@ ngOnInit(): void {
             )
           ).subscribe(
             (pets) => {
-              this.client.mascotas = pets;  
+              this.petList = pets;  
             }
           )
      });
-    }
+  }
   
-  
-    ngOnChanges(): void {
-      console.log(this.client);
-    }
 
 }
