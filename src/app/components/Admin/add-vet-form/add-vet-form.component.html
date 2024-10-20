@@ -1,19 +1,10 @@
-<!--
-export interface Veterinario {
-    id: number;
-    cedula: string;
-    contrasenia: string;
-    especialidad: string;
-    numAtenciones: number;
-    nombre: string;
-    mascotas: Mascota[];
-}
-
-
-
+<main>
 <div id="container">
     <div id="formulario-container" class="form_area">
-        <h2 class="title">Agregar Mascota</h2>
+      
+ 
+      
+        <h2 class="title">Agregar veterinario</h2>
         <form (ngSubmit)="agregarVeterinario()"> 
 
             <div class="form_group">
@@ -22,47 +13,30 @@ export interface Veterinario {
               </div>
               
               <div class="form_group">
-                <label for="raza">Raza:</label>
-                <input [(ngModel)]="formularioVeterinario.raza" name="raza" type="text" id="raza" placeholder="Ingresa la raza" required class="form_style">
+                <label for="cedula">Cedula:</label>
+                <input [(ngModel)]="formularioVeterinario.cedula" name="cedula" type="text" id="cedula" placeholder="Ingresa la cedula" required class="form_style">
               </div>
-              
+
               <div class="form_group">
-                <label for="edad">Edad:</label>
-                <input [(ngModel)]="formularioVeterinario.edad" name="edad" type="number" id="edad" placeholder="Ingresa la edad" required class="form_style">
+                <label for="contrasenia">Contraseña:</label>
+                <input [(ngModel)]="formularioVeterinario.contrasenia" name="contrasenia" type="password" id="contrasenia" placeholder="Ingresa la contraseña" required class="form_style">
               </div>
-              
+
               <div class="form_group">
-                <label for="peso">Peso:</label>
-                <input [(ngModel)]="formularioVeterinario.peso" name="peso" type="number" id="peso" placeholder="Ingresa el peso" required class="form_style">
+                <label for="especialidad">Especialidad:</label>
+                <input [(ngModel)]="formularioVeterinario.especialidad" name="especialidad" type="text" id="especialidad" placeholder="Ingresa la especialidad" required class="form_style">
               </div>
-              
+
+             
               <div class="form_group">
-                <label for="foto">Foto:</label>
-                <input [(ngModel)]="formularioVeterinario.foto" name="foto" type="text" id="foto" placeholder="Ingresa la URL de la foto" required class="form_style">
+                <label for="numAtenciones">Número de atenciones:</label>
+                <input [(ngModel)]="formularioVeterinario.numAtenciones" name="numAtenciones" type="text" id="numAtenciones" placeholder="Ingresa la numero de atenciones" required class="form_style">
               </div>
+          
               
-              <div class="form_group">
-                <label for="enfermedad">Enfermedad:</label>
-                <input [(ngModel)]="formularioVeterinario.enfermedad" name="enfermedad" type="text" id="enfermedad" placeholder="Ingresa la enfermedad" required class="form_style">
-              </div>
-              
-              <div class="form_group">
-                <label for="estado">Estado:</label>
-                <select id="estado" [(ngModel)]="formularioVeterinario.estado" name="estadoSeleccionado" class="form_style" required>
-                  <option [value]="'Activo'">Activo</option>
-                  <option [value]="'Inactivo'">Inactivo</option>
-                </select>
-              </div>
-              
-              <div class="form_group">
-                <label for="cliente">Cliente:</label>
-                <select id="clientes" [(ngModel)]="formularioMascota.cliente" name="clienteSeleccionado" required class="form_style">
-                  <option *ngFor="let cliente of clientList" [value]="cliente.cedula">{{ cliente.nombre }} - {{ cliente.cedula }}</option>
-                </select>
-              </div>
-              
-              <button type="submit" class="btn btn-primary">Agregar Mascota</button>
+              <button type="submit" class="btn btn-primary">Agregar</button>
         </form>
     </div>
 </div>
--->
+
+</main>

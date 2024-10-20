@@ -109,7 +109,7 @@ button:hover{
     flex-direction: column;
     text-align: center;
     width: 80%;
-    margin: 0 auto; /* Centrar el contenedor en la página */
+    margin: auto auto; /* Centrar el contenedor en la página */
   }
   
   /* Asegurar que el formulario esté centrado */

@@ -80,11 +80,11 @@ export class UpdatePetFormComponent {
     this.petService.updatePet(this.formularioMascota.id, mascota, cedula).subscribe(
       (response) => {
         console.log('Cliente actualizado con éxito', response);
-        this.router.navigate(['/pet-list']);
+        this.router.navigate(['vet/pets']);
       },
       (error) => {
         console.error('Error al actualizar el cliente', error);
-        this.router.navigate(['/pet-list']);
+        this.router.navigate(['vet/pets']);
       }
     );
   } 

@@ -4,13 +4,14 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { PetService } from '../../../services/pet.service';
+import { FormsModule } from '@angular/forms';
 
 
 
 @Component({
   selector: 'app-table-pet',
   standalone: true,
-  imports: [CommonModule, RouterLink, HttpClientModule],
+  imports: [CommonModule, RouterLink, HttpClientModule, FormsModule],
   templateUrl: './table-pet.component.html',
   styleUrl: './table-pet.component.css'
 })
@@ -23,10 +24,14 @@ export class TablePetComponent {
     private petService: PetService
     ) { }
 
+    filteredMascotas: Mascota[] = [];  // Lista filtrada
+    searchMascota: string = '';
+
     ngOnInit(): void {
       this.petService.findAll().subscribe(
         (mascotas) => {
           this.petList = mascotas;
+          this.filteredMascotas = mascotas;
         }
       );
     }
@@ -44,6 +49,13 @@ export class TablePetComponent {
     agregarMascota(mascota: Mascota, nombre : string) {
       this.petList.push(mascota);
       this.petService.addPet(mascota, nombre);
+    }
+
+    filterMascotas(): void {
+      this.filteredMascotas = this.petList.filter(mascota =>
+        mascota.nombre.toLowerCase().includes(this.searchMascota.toLowerCase()) ||
+        mascota.raza.toLowerCase().includes(this.searchMascota.toLowerCase())
+      );
     }
   
 

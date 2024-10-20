@@ -156,6 +156,14 @@ main h1{
 }
 
 
+td a, td button{
+    margin: 0 5px;
+}
+
+tr th {
+    text-align: center; /* Centra horizontalmente el texto */
+      vertical-align: middle;
+  }
 
 
 .Btn {
@@ -230,4 +238,36 @@ main h1{
   .Btn:active {
     transform: translate(2px, 2px);
   }
+
+  #title{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+
+#block{
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+}
+
+#searchBar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%; /* Ancho fijo */
+  max-width: 1000px; /* Ancho máximo opcional */
+}
+
+#searchBar input {
+  width: 30%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: "Nunito", sans-serif;
+}
 

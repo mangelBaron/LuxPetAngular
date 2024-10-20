@@ -7,13 +7,24 @@
     nombre: string;
     mascotas: Mascota[];
     -->
+<main>
     
 
-<div id="botonAgregar">
-    <a class="button" [routerLink]="['admin/form']">Agregar  veterinario</a>
-</div>
+    <div id="title">
+        <h1>Lista de veterinarios</h1>
+    </div>
 
-<main>
+    <div id="block">
+        <div id="searchBar">
+          <input type="text" placeholder="Buscar un veterinario" [(ngModel)]="searchVeterinario" (input)="filterVeterinario()" />
+        </div>
+        
+        <div id="botonAgregar">
+            <a class="button" [routerLink]="['/admin/form']">Agregar veterinario</a>
+        </div>
+    </div>
+
+
   <div>
     <table>
         <thead>
@@ -24,7 +35,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let vet of vetList">
+            <tr *ngFor="let vet of filteredVeterinarios">
                 <td>{{ vet.nombre }}</td>
                 <td>{{ vet.cedula }}</td>
                 <td>

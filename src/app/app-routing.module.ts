@@ -32,6 +32,8 @@ import { AdminLoginPageComponent } from './pages/Admin-pages/admin-login-page/ad
 import { AdminUpdatePageComponent } from './pages/Admin-pages/admin-update-page/admin-update-page.component';
 import { UpdatePetFormComponent } from './components/Mascotas/update-pet-form/update-pet-form.component';
 import { UpdatePetFormPageComponent } from './pages/Pet-Pages/update-pet-form-page/update-pet-form-page.component';
+import { AdminFormPageComponent } from './pages/Admin-pages/admin-form-page/admin-form-page.component';
+import { UpdateVetFormComponent } from './components/Admin/update-vet-form/update-vet-form.component';
 
 // Definir las rutas
 export const routes: Routes = [
@@ -41,23 +43,31 @@ export const routes: Routes = [
   { path: 'info-landing', component: InfoLandingComponent },
   { path: 'header-login', component: HeaderLoginComponent },
   { path: 'cliente-login', component: ClienteLoginComponent },
-  { path: 'client-login', component: ClientLoginPageComponent },
-  { path: 'pet-list', component: PetListPageComponent },
-  { path: 'clients', component: ClientListPageComponent },
-  { path: 'mascota/:id', component: PetInfoPageComponent },
-  { path: 'client-form', component: ClientFormPageComponent },
-  { path: 'pet-form', component: PetFormPageComponent },
-  { path: 'client-portal', component: ClientPortalPageComponent },
+ 
   { path: 'landing', component: LandingPageComponent },
-  { path: 'vet-login', component: VeterinaryLoginPageComponent },
+
+  { path: 'vet/pets', component: PetListPageComponent },
+  { path: 'vet/pet/form', component: PetFormPageComponent },
+  { path: 'vet/login', component: VeterinaryLoginPageComponent },
+  { path: 'vet/pet/:id', component: PetInfoPageComponent },
+  { path: 'vet/pet/update/:id', component: UpdatePetFormPageComponent},
+
+  { path: 'clients', component: ClientListPageComponent },
+  { path: 'client/form', component: ClientFormPageComponent },
+  { path: 'client/login', component: ClientLoginPageComponent },
+  { path: 'client/portal', component: ClientPortalPageComponent },
   { path: 'client/:id', component: ClientInfoPageComponent},
   { path: 'client/update/:id', component: UpdateClientFormPageComponent},
+
   { path: 'admin', component: AdminListPageComponent},
+  { path: 'admin/form', component: AdminFormPageComponent},
+  { path: 'admin/login', component: AdminLoginPageComponent},
   { path: 'admin/:id', component: AdminInfoPageComponent},
-  { path: 'admin/update/:id', component: UpdateClientFormPageComponent},
+  { path: 'admin/update/:id', component: AdminUpdatePageComponent},
   { path: 'admin/dashboard', component: AdminDashboardPageComponent},
-  { path: 'admin-login', component: AdminLoginPageComponent},
-  { path: 'mascota/update/:id', component: UpdatePetFormPageComponent},
+  
+  
+
 
   // Ruta por defecto: redirigir a 'landing' si no se especifica ruta
   { path: '', redirectTo: '/landing', pathMatch: 'full' },

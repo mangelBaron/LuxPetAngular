@@ -1,1 +1,43 @@
-<p>update-vet-form works!</p>
+<main>
+    <div id="container">
+        <div id="formulario-container" class="form_area">
+          
+     
+          
+            <h2 class="title">Agregar veterinario</h2>
+            <form (ngSubmit)="actualizarVeterinario()"> 
+    
+                <div class="form_group">
+                    <label for="nombre">Nombre:</label>
+                    <input [(ngModel)]="formularioVeterinario.nombre" name="nombre" type="text" id="nombre" placeholder="Ingresa el nombre" required class="form_style">
+                  </div>
+                  
+                  <div class="form_group">
+                    <label for="cedula">Cedula:</label>
+                    <input [(ngModel)]="formularioVeterinario.cedula" name="cedula" type="text" id="cedula" placeholder="Ingresa la cedula" required class="form_style">
+                  </div>
+    
+                  <div class="form_group">
+                    <label for="contrasenia">Contraseña:</label>
+                    <input [(ngModel)]="formularioVeterinario.contrasenia" name="contrasenia" type="password" id="contrasenia" placeholder="Ingresa la contraseña" required class="form_style">
+                  </div>
+    
+                  <div class="form_group">
+                    <label for="especialidad">Especialidad:</label>
+                    <input [(ngModel)]="formularioVeterinario.especialidad" name="especialidad" type="text" id="especialidad" placeholder="Ingresa la especialidad" required class="form_style">
+                  </div>
+    
+                 
+                  <div class="form_group">
+                    <label for="numAtenciones">Número de atenciones:</label>
+                    <input [(ngModel)]="formularioVeterinario.numAtenciones" name="numAtenciones" type="text" id="numAtenciones" placeholder="Ingresa la numero de atenciones" required class="form_style">
+                  </div>
+              
+                  
+                  <button type="submit" class="btn btn-primary">Agregar</button>
+            </form>
+        </div>
+    </div>
+    
+    </main>
+    

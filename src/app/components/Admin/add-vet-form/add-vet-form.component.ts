@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { VeterinarioService } from '../../../services/veterinario.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Veterinario } from '../../../model/veterinario';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-add-vet-form',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './add-vet-form.component.html',
   styleUrl: './add-vet-form.component.css'
 })
@@ -35,7 +36,7 @@ private route: ActivatedRoute
 
 
 
-crearCliente(): void {
+agregarVeterinario(): void {
   this.vetService.addVeterinario(this.formularioVeterinario).subscribe(
     (response) => {
       console.log('Cliente creado con éxito', response);

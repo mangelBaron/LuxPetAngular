@@ -6,11 +6,12 @@ import { ClientService } from '../../../services/client.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PetService } from '../../../services/pet.service';
 import { mergeMap } from 'rxjs';
+import { HeaderVetComponent } from "../../../components/Mascotas/header-vet/header-vet.component";
 
 @Component({
   selector: 'app-client-form-page',
   standalone: true,
-  imports: [AddClientFormComponent, HeaderLoginComponent],
+  imports: [AddClientFormComponent, HeaderLoginComponent, HeaderVetComponent],
   templateUrl: './client-form-page.component.html',
   styleUrl: './client-form-page.component.css'
 })

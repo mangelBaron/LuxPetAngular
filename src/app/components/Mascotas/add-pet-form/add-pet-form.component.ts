@@ -82,12 +82,12 @@ export class AddPetFormComponent {
       this.mascotaService.addPet(mascota, cedula).subscribe(
         (response) => {
           console.log('Mascota creada con éxito', response);
-          this.router.navigate(['/pet-list']);
+          this.router.navigate(['/vet/pets']);
           this.formularioMascota.id =  this.formularioMascota.id + 1;
         },
         (error) => {
           console.error('Error al crear la mascota', error);
-          this.router.navigate(['/pet-list']);
+          this.router.navigate(['/vet/pets']);
         }
       );
     } else {
