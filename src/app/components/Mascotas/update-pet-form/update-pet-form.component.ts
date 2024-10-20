@@ -10,7 +10,7 @@ import { mergeMap } from 'rxjs';
 
 
 @Component({
-  selector: 'app-add-pet-form',
+  selector: 'app-update-pet-form',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './update-pet-form.component.html',
@@ -22,6 +22,8 @@ export class UpdatePetFormComponent {
 
   petList!: Mascota[];
   clientList!: Cliente[];
+
+  clienteSeleccionado: string = '';
 
 
   formularioMascota: Mascota = {
@@ -45,43 +47,47 @@ export class UpdatePetFormComponent {
     private clientService: ClientService
   ) { }
 
+  ngOnInit(): void {
+    console.log("ngOnInit de ClientFormPageComponent");
 
-  /*   ngOnInit(): void {
-    console.log("ngOnInit de UpdatePetFormComponent");
+    this.clientService.findAll().subscribe(
+      (clients) => {
+        this.clientList = clients;
+      },
+      (error) => {
+        console.error('Error al obtener clientes:', error);
+      }
+    );
 
     this.route.paramMap.subscribe(params => {
       const id = Number(params.get('id'));
-      if (!isNaN(id)) {
-        this.petService.findById(id).pipe(
-          mergeMap(petInfo => {
-            this.formularioMascota = petInfo;
-            return this.petService.findClientPet(this.formularioMascota.);
-          })
-        ).subscribe(
-          pets => {
-            this.petList = pets;
+      this.petService.findById(id).subscribe(
+          (PetInfo) =>{
+            this.formularioMascota = PetInfo;
           },
-          error => {
-            console.error('Error al obtener la información del cliente o sus mascotas', error);
+          (error) =>{
+            console.error('Error al obtener el cliente', error);
           }
         );
-      } else {
-        console.error('ID de mascota no válido');
-      }
     });
-  } */
+  }
+          
+  
 
+  actualizarMascota(mascota: Mascota, cedula: string): void {
+    console.log('Mascota a actualizar, cedula del cliente: ', cedula +' Mascota del cliente:', mascota);
 
-  guardarCambios(): void {
-    this.petService.updatePet(this.formularioMascota.id, this.formularioMascota).subscribe(
-      () => {
-        this.router.navigate(['/mascotas']);
+    this.petService.updatePet(this.formularioMascota.id, mascota, cedula).subscribe(
+      (response) => {
+        console.log('Cliente actualizado con éxito', response);
+        this.router.navigate(['/pet-list']);
       },
-      error => {
-        console.error('Error al actualizar la mascota', error);
+      (error) => {
+        console.error('Error al actualizar el cliente', error);
+        this.router.navigate(['/pet-list']);
       }
     );
-  }
+  } 
 
 }
 

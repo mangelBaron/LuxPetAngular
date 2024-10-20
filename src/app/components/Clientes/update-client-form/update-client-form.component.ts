@@ -41,50 +41,35 @@ export class UpdateClientFormComponent implements OnInit {
 
     this.route.paramMap.subscribe(params => {
       const id = Number(params.get('id'));
-      if (!isNaN(id)) {
-        this.clientService.findById(id).pipe(
-          mergeMap(clientInfo => {
-            this.infoClientUpdate = clientInfo;
-            return this.petService.findClientPet(this.infoClientUpdate.id);
-          })
-        ).subscribe(
-          pets => {
-            this.petList = pets;
+      this.clientService.findById(id).subscribe(
+          (ClienteInfo) =>{
+            this.infoClientUpdate = ClienteInfo;
           },
-          error => {
-            console.error('Error al obtener la información del cliente o sus mascotas', error);
+          (error) =>{
+            console.error('Error al obtener el cliente', error);
           }
         );
-      } else {
-        console.error('ID de cliente no válido');
-      }
     });
   }
+          
+  
 
-  guardarCambios(): void {
-    if (!this.infoClientUpdate.cedula) {
-      alert('El campo cedula es obligatorio');
-      return;
-    }
-
-    if (!this.infoClientUpdate.correo) {
-      alert('El campo correo es obligatorio');
-      return;
-    }
-
-    if (!this.infoClientUpdate.celular) {
-      alert('El campo celular es obligatorio');
-      return;
-    }
-
+  actualizarCliente(): void {
+    console.log('Cliente a actualizar', this.infoClientUpdate.id, this.infoClientUpdate);
     this.clientService.updateClient(this.infoClientUpdate.id, this.infoClientUpdate).subscribe(
-      () => {
+      (response) => {
+        console.log('Cliente actualizado con éxito', response);
         this.router.navigate(['/clients']);
       },
-      error => {
+      (error) => {
         console.error('Error al actualizar el cliente', error);
+        this.router.navigate(['/clients']);
       }
     );
+  }
+
+  cancelar(): void {
+    this.router.navigate(['/clients']);
   }
 
 }

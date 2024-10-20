@@ -38,7 +38,7 @@ crearCliente(): void {
   this.clientService.addCliente(this.formularioCliente).subscribe(
     (response) => {
       console.log('Cliente creado con éxito', response);
-      this.router.navigate(['/cliente/all']);
+      this.router.navigate(['/clients']);
     },
     (error) => {
       console.error('Error al crear el cliente', error);

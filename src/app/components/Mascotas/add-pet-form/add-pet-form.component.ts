@@ -19,7 +19,7 @@ export class AddPetFormComponent {
   @Output()
   agregarMascotaEvent = new EventEmitter<Mascota>();
 
-  clientList!: Cliente[];
+ 
 
   formularioMascota: Mascota = {
     id: 0,
@@ -30,10 +30,10 @@ export class AddPetFormComponent {
     foto: '',
     enfermedad: '',
     estado: '',
-    cliente: undefined,
-    veterinario: undefined,
-    tratamiento: undefined
   };
+
+  clientList!: Cliente[];
+  clienteSeleccionado: string = '';
 
   constructor(
     private router: Router, 
@@ -41,21 +41,6 @@ export class AddPetFormComponent {
     private clientService: ClientService
   ) { }
 
-  agregarMascota(): void {
-    console.log('Agregando mascota:', this.formularioMascota);
-    const mascotaNueva = Object.assign({}, this.formularioMascota);
-
-    this.mascotaService.addPet(mascotaNueva).subscribe(
-      (response) => {
-        console.log('Mascota agregada con éxito', response);
-        this.agregarMascotaEvent.emit(this.formularioMascota);
-        this.router.navigate(['/pet-list'], { queryParams: { userType: "veterinario" }});
-      },
-      (error) => {
-        console.error('Error al agregar la mascota', error);
-      }
-    );
-  }
 
   ngOnInit(): void {
     this.clientService.findAll().subscribe(
@@ -66,5 +51,51 @@ export class AddPetFormComponent {
         console.error('Error al obtener clientes:', error);
       }
     );
+
+    this.mascotaService.findAll().subscribe(
+      (mascotas) => {
+        console.log('Mascotas:', mascotas);
+        if (mascotas.length > 0) {
+          const maxId = Math.max(...mascotas.map(mascota => mascota.id));
+          const newId = maxId + 1;
+          console.log('Nuevo ID para la siguiente mascota:', newId);
+          
+          this.formularioMascota.id = newId;
+        } else {
+          console.log('No hay mascotas en la lista. El ID para la primera mascota será 1.');
+          const newId = 1;
+          // Asignar el newId a la siguiente mascota
+          // this.nuevaMascota.id = newId;
+        }
+      },
+      (error) => {
+        console.error('Error al obtener mascotas:', error);
+      }
+    );
+
   }
+
+ 
+
+  agregarMascota(mascota: Mascota, cedula: string): void {
+    if (cedula) {
+      this.mascotaService.addPet(mascota, cedula).subscribe(
+        (response) => {
+          console.log('Mascota creada con éxito', response);
+          this.router.navigate(['/pet-list']);
+          this.formularioMascota.id =  this.formularioMascota.id + 1;
+        },
+        (error) => {
+          console.error('Error al crear la mascota', error);
+          this.router.navigate(['/pet-list']);
+        }
+      );
+    } else {
+      console.error('No se ha proporcionado una cédula válida');
+    }
+  }
+   
+
+
+ 
 }

@@ -1,7 +1,7 @@
 <div id="container"></div>
     <div id="formulario-container" class="form_area">
         <h2 class="title">Agregar Mascota</h2>
-        <form (ngSubmit)="guardarCambios()"> 
+        <form (ngSubmit)="actualizarMascota(formularioMascota, clienteSeleccionado)"> 
 
             <div class="form_group">
                 <label for="nombre">Nombre:</label>
@@ -43,11 +43,11 @@
               
               <div class="form_group">
                 <label for="cliente">Cliente:</label>
-                <select id="clientes" [(ngModel)]="formularioMascota.cliente" name="clienteSeleccionado" required class="form_style">
+                <select id="clientes" [(ngModel)]="clienteSeleccionado" name="clienteSeleccionado" required class="form_style">
                   <option *ngFor="let cliente of clientList" [value]="cliente.cedula">{{ cliente.nombre }} - {{ cliente.cedula }}</option>
                 </select>
               </div>
               
-              <button type="submit" class="btn btn-primary">Agregar Mascota</button>
+              <button type="submit" class="btn btn-primary">Modificar</button>
         </form>
     </div>

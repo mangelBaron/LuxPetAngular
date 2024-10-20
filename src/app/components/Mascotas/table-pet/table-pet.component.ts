@@ -41,9 +41,9 @@ export class TablePetComponent {
       this.petService.deleteById(mascota.id);
     }
   
-    agregarMascota(mascota: Mascota) {
+    agregarMascota(mascota: Mascota, nombre : string) {
       this.petList.push(mascota);
-      this.petService.addPet(mascota);
+      this.petService.addPet(mascota, nombre);
     }
   
 

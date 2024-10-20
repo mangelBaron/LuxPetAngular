@@ -29,6 +29,9 @@ import { AdminListPageComponent } from './pages/Admin-pages/admin-list-page/admi
 import { AdminInfoPageComponent } from './pages/Admin-pages/admin-info-page/admin-info-page.component';
 import { AdminDashboardPageComponent } from './pages/Admin-pages/admin-dashboard-page/admin-dashboard-page.component';
 import { AdminLoginPageComponent } from './pages/Admin-pages/admin-login-page/admin-login-page.component';
+import { AdminUpdatePageComponent } from './pages/Admin-pages/admin-update-page/admin-update-page.component';
+import { UpdatePetFormComponent } from './components/Mascotas/update-pet-form/update-pet-form.component';
+import { UpdatePetFormPageComponent } from './pages/Pet-Pages/update-pet-form-page/update-pet-form-page.component';
 
 // Definir las rutas
 export const routes: Routes = [
@@ -47,13 +50,14 @@ export const routes: Routes = [
   { path: 'client-portal', component: ClientPortalPageComponent },
   { path: 'landing', component: LandingPageComponent },
   { path: 'vet-login', component: VeterinaryLoginPageComponent },
-  {path: 'client/:id', component: ClientInfoPageComponent},
-  {path: 'client/update/:id', component: UpdateClientFormPageComponent},
-  {path: 'admin', component: AdminListPageComponent},
-  {path: 'admin/:id', component: AdminInfoPageComponent},
-  {path: 'admin/update/:id', component: UpdateClientFormPageComponent},
-  {path: 'admin/dashboard', component: AdminDashboardPageComponent},
-  {path: 'admin-login', component: AdminLoginPageComponent},
+  { path: 'client/:id', component: ClientInfoPageComponent},
+  { path: 'client/update/:id', component: UpdateClientFormPageComponent},
+  { path: 'admin', component: AdminListPageComponent},
+  { path: 'admin/:id', component: AdminInfoPageComponent},
+  { path: 'admin/update/:id', component: UpdateClientFormPageComponent},
+  { path: 'admin/dashboard', component: AdminDashboardPageComponent},
+  { path: 'admin-login', component: AdminLoginPageComponent},
+  { path: 'mascota/update/:id', component: UpdatePetFormPageComponent},
 
   // Ruta por defecto: redirigir a 'landing' si no se especifica ruta
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
