@@ -1,14 +1,15 @@
 <div class="center-container">  
     <div class="container">
         <div class="heading">Iniciar Sesión</div>
-        <form action="/login/loginVeterinario" method="post" class="form">
-            <input required="" class="input" type="text" name="cedula" id="cedula" placeholder="Ingresa tu cédula">
-            <input required="" class="input" type="password" name="cedula" id="cedula" placeholder="Ingresa su contraseña">
-
-            <button class="login-button" type="button" [routerLink]="['vet/pets']">Iniciar Sesión</button>
+        <form (ngSubmit)="verificarLogin()" class="form">
+            <input required class="input" type="text" [(ngModel)]="usuario.cedula" name="cedula" id="cedula" placeholder="Ingresa tu cédula">
+            <input required class="input" type="password" [(ngModel)]="usuario.password" name="password" id="password" placeholder="Ingresa su contraseña">
+            
+            <button class="login-button" type="submit">Iniciar Sesión</button>
+            <div id="alerta" style="color: red;">
+                <p *ngIf="error">{{ error }}</p>
+              </div>
         </form>
-        <div id="alerta" style="color: red;">
-          <p th:if="${error}" th:text="${error}"></p>
-      </div>
+      
     </div>
 </div>

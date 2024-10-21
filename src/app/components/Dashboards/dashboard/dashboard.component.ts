@@ -13,27 +13,8 @@ import { Droga } from '../../../model/droga';
 })
 export class DashboardComponent {
 
-  dashboard: Dashboard = {
-    veterinariosActivos: 1,
-    veterinariosInactivos: 1,
-    mascotasActivas: 1,
-    mascotasInactivas: 1,
-    drogas: [] as Droga[] | undefined
-  }
 
-    /* veterinariosActivos: number;
-    veterinariosInactivos: number;
-    mascotasActivas: number;
-    mascotasInactivas: number;
-    drogas ?: Droga[]; */
 
-constructor(
-
-){}
-
-ngOnInit(){
-
-}
 
 
 

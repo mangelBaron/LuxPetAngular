@@ -6,22 +6,22 @@
 
     <div id="infoCliente">
 <div class="card-client">
-    <div class="user-picture">
-        <!-- Aquí podrías incluir una imagen o un ícono SVG del cliente -->
-        <svg> <!-- Ejemplo de SVG --> </svg>
-    </div>
-    <p class="name-client">
-        <span th:text="${cliente.nombre}"></span>
+
+<ng-container *ngIf="cliente">
+  <p class="name-client">
+    <span>{{ cliente?.nombre }}</span>
+  </p>
+    <p class="form_group">
+        <span>{{ cliente?.cedula }}</span>
     </p>
     <p class="form_group">
-        <span th:text="${cliente.cedula}"></span>
+        <span>{{ cliente?.correo }}</span>
     </p>
     <p class="form_group">
-        <span th:text="${cliente.correo}"></span>
+        <span>{{ cliente?.celular }}</span>
     </p>
-    <p class="form_group">
-        <span th:text="${cliente.celular}"></span>
-    </p>
+    </ng-container>
+
     <!-- Añade iconos o enlaces para redes sociales si es necesario -->
     <div class="social-media">
         <a href="#" class="tooltip-social"> <!-- Enlace de ejemplo -->
@@ -30,11 +30,12 @@
         </a>
         <!-- Más enlaces si es necesario -->
     </div>
+    
 </div>
 </div>
 
    
 
-<a [routerLink]="['client/login']" class="btn">Cerrar Sesión</a>
+<a [routerLink]="['/client/login']" class="btn"> Cerrar Sesión </a>
     
 </nav>

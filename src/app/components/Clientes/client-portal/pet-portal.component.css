@@ -10,7 +10,7 @@ main {
   
     main h2{
       font-family: "Nunito", sans-serif;
-      color: #e4d9bc;
+      color: #ddc47d;
       font-size: 40px;
       margin-bottom: 20px;
     }
@@ -28,8 +28,10 @@ main {
       font-size: 20px;
       margin-bottom: 20px;
       padding: 15px;
-      background-color: #e4d9bc;
+      background-color: #ddc47d;
     }
+
+    
   
       table td{
           border: 2px solid black;
@@ -53,3 +55,30 @@ main {
       #detallesMascota:hover{
           background-color: #ddc47d;
       }
+
+      td button{
+        margin: 0 5px;
+    }
+    
+    tr th {
+      text-align: center; /* Centra horizontalmente el texto */
+        vertical-align: middle;
+    } 
+
+    
+#searchBar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%; /* Ancho fijo */
+  max-width: 1000px; /* Ancho máximo opcional */
+}
+
+#searchBar input {
+  width: 30%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: "Nunito", sans-serif;
+}

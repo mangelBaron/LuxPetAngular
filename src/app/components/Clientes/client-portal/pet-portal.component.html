@@ -1,0 +1,28 @@
+<main>
+    <h2>Tus mascotas</h2>
+
+    <div id="searchBar">
+        <input type="text" placeholder="Buscar una mascota" [(ngModel)]="searchMascota" (input)="filterMascotas()" />
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Foto</th>
+                <th>Nombre</th>
+                <th>Accion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let mascota of filteredMascotas">
+                <td>{{ mascota.nombre }}</td>
+                <td>{{ mascota.raza }}</td>
+                <td>
+                  <button [routerLink]="['/pet/', mascota.id]">Ver detalles</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+       
+</main>
+
