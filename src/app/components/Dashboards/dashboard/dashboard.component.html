@@ -1,90 +1,111 @@
 <main>
+    <div id="titulo">
+        <h1>Dashboard</h1>
+    </div>
+
     <div id="container">
-        <div id="container-left">
-            <div id="titulo">
-                <h1>Dashboard</h1>
-            </div>
-            <div id="container-tratamientos">
-               <div class="labels">
-                <p>Cantidad total de tratamientos ultimo mes</p>
-               </div>
-               <div class="data">
-                 <p>x</p>
-               </div>
-            </div>
-    
-            <div id="container-veterinarios-activos">
-                <div class="labels">
-                    <p>Cantidad de veterinarios activos</p>
+        <div id="left-container">
+
+            <div class="mini-container">
+                <div class="label">
+                    <h3>Cantidad de veterinarios activos</h3>
                 </div>
-                <ng-container>
-                    <div class="data">
-                       
-                    </div>
-                </ng-container>
-              
-            </div>
-    
-            <div id="container-veterinarios-inactivos">
-                <div class="labels">
-                    <p>Cantidad de veterinarios inactivos</p>
+
+                <div class="info-label">
+                    <h4>{{ numeroVeterinarios }}</h4>
                 </div>
-                <ng-container>
-                    <div class="data">
-                        
-                    </div>
-                </ng-container>
             </div>
-           
-    
-            <div id="container-mascotas-activas">
-                <div class="labels">
-                    <p>Cantidad de mascotas activas</p>
+
+            
+            <div class="mini-container">
+                <div class="label">
+                    <h3>Cantidad de mascotas activas</h3>
                 </div>
-                <ng-container>
-                    <div class="data">
-                       
-                    </div>
-                </ng-container>
-            </div>
-    
-            <div id="container-mascotas-inactivas">
-                <div class="labels">
-                    <p>Cantidad de mascotas inactivas</p>
+
+                <div class="info-label">
+                    <h4> {{ numeroMascotas }}</h4>
                 </div>
-                <ng-container>
-                    <div class="data">
-                       
-                    </div>
-                </ng-container>
             </div>
-    
+            
+                
+            <div class="mini-container">
+                <div class="label">
+                    <h3>Cantidad de mascotas inactivas</h3>
+                </div>
+
+                <div class="info-label">
+                    <h4>{{ numeroMascotasInactivas }}</h4>
+                </div>
+            </div>
+
+            
+            
+            
+
         </div>
-    
-        <div id="container-right">
-            <div id="container-tratamientos">
-                <div class="labels">
-                    <p>Cantidad de drogas disponibles en la veterinaria</p>
+        <div id="right-container">
+
+            
+            <div class="mini-container">
+                <div class="label"> 
+                    <h3>Número de tratamientos en el ultimo mes</h3>
                 </div>
-             
-                <table>
-                    <thead>
-                        <tr>
-                            <th scope="col">Medicamentos</th>
-                            <th scope="col">Cantidad</th> 
-                        </tr>
-                    </thead>
-                    <tbody>
-                      <!--    <tr *ngFor="let droga of dashboard.drogas">
-                            <td>{{ droga.nombre }}</td>
-                            <td>{{ droga.cantidad }}</td>
-                           
-                        </tr> -->
-                    </tbody>
-                </table>
-    
+
+                <div class="info-label">
+                    <h4>{{ numeroTratamientos }}</h4>
+                </div>
             </div>
+            
+            
+                   
+            <div class="mini-container">
+                <div class="label">
+                    <h3>Ventas totales</h3>
+                </div>
+
+                <div class="info-label">
+                    <h4>{{ventasTotales}}</h4>
+                </div>
+            </div>
+            
+                   
+            <div class="mini-container">
+                <div class="label">
+                    <h3>Ganancias totales</h3>
+                </div>
+
+                <div class="info-label">
+                    <h4>{{ gananciasTotales }}</h4>
+                </div>
+            </div>
+            
+         
+            
         </div>
     </div>
+
+       
+    <div id="tituloDrogas">
+        <h3>Top drogas de la veterinaria</h3>
+    </div>
+
+
+    <div id="table">
+        <table>
+            <thead>
+                <tr> 
+                    <th>Nombre</th>
+                    <th>Precio venta</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let droga of topdrogas">
+                    <td>{{droga.nombre}}</td>
+                    <td>{{droga.precioVenta}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
    
 </main>

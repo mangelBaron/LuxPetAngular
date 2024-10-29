@@ -59,12 +59,14 @@ export const routes: Routes = [
   { path: 'client/:id', component: ClientInfoPageComponent},
   { path: 'client/update/:id', component: UpdateClientFormPageComponent},
 
-  { path: 'admin', component: AdminListPageComponent},
   { path: 'admin/form', component: AdminFormPageComponent},
   { path: 'admin/login', component: AdminLoginPageComponent},
-  { path: 'admin/:id', component: AdminInfoPageComponent},
   { path: 'admin/update/:id', component: AdminUpdatePageComponent},
   { path: 'admin/dashboard', component: AdminDashboardPageComponent},
+  { path: 'admin', component: AdminListPageComponent},
+  { path: 'admin/:id', component: AdminInfoPageComponent},
+
+
   
   
 

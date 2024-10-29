@@ -19,8 +19,6 @@ export class PetPortalComponent {
 
   searchMascota: string = '';
 
-
-
   constructor(
     private petService: PetService,
     private router: Router,
