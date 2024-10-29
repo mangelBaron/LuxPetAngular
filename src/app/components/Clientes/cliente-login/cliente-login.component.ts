@@ -28,7 +28,7 @@ export class ClienteLoginComponent {
       (cliente) => {
         if (cliente) {
           console.log('Cliente encontrado:', cliente);
-          this.router.navigate(['/cliente/portal']);
+          this.router.navigate(['/client/portal'], { state: { cliente: cliente } });
         } else {
           console.error('Cliente no encontrado - ' + this.cedula + " ", cliente);
 

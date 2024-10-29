@@ -42,7 +42,7 @@ export class VeterinaryLoginComponent {
           }
         },
         (error) => {
-          this.error = 'Error ';
+          this.error = 'Error, verifique sus credenciales';
           console.error('Error al iniciar sesión', error);
         }
       );

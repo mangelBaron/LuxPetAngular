@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cliente } from '../model/cliente';
+import { Mascota } from '../model/mascota';
 
 @Injectable({
   providedIn: 'root'
@@ -35,4 +36,9 @@ export class ClientService {
   updateClient(id: number, cliente: Cliente): Observable<Cliente>{
    return this.http.put<Cliente>('http://localhost:8090/cliente/update/' + id, cliente);
   }
+
+  getPets(id: number): Observable<Mascota[]>{
+    return this.http.get<Mascota[]>('http://localhost:8090/cliente/mascotas/' + id);
+  }
+
 }

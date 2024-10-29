@@ -15,13 +15,13 @@ export class LoginService {
   ) { }
 
   loginVeterinario(loginRequest: LoginRequest): Observable<Veterinario> {
-    return this.http.post<Veterinario>('http://localhost:8090/login/loginveterinario', loginRequest);
+    return this.http.post<Veterinario>('http://localhost:8090/login/loginVeterinario', loginRequest);
   }
 
   
   loginCliente(cedula: string): Observable<Cliente> {
     const loginRequest = { cedula: cedula };
-    return this.http.post<Cliente>('http://localhost:8090/login/logincliente', loginRequest); 
+    return this.http.post<Cliente>('http://localhost:8090/login/', loginRequest); 
   }
 
 

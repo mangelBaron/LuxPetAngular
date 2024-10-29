@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Cliente } from '../../../model/cliente';
 
 @Component({
@@ -13,7 +13,26 @@ import { Cliente } from '../../../model/cliente';
 })
 export class NavBarClientComponent {
 
-  constructor() { }
-  cliente? : Cliente
+
+  cliente: any;
+
+  constructor(
+    private router: Router
+  ) { 
+
+    const navigation = this.router.getCurrentNavigation();
+    this.cliente = navigation?.extras.state?.['cliente'] ?? null;
+  
+  }
+
+
+  ngOnInit(): void {
+
+    if (this.cliente) {
+      console.log('Cliente en el portal:', this.cliente);
+    }
+  
+  }
+
 
 }
