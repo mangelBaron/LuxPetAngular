@@ -39,10 +39,11 @@
                 <td>{{ vet.nombre }}</td>
                 <td>{{ vet.cedula }}</td>
                 <td>
-                  <button [routerLink]="['/admin/', vet.id]">Ver detalles</button>
-                  <button [routerLink]="['/admin/update/', vet.id]" id="editarBtn">Editar</button>
-                  <button id="eliminarBtn" (click)="eliminarVeterinario(vet)">Eliminar</button>
-                </td>
+                    <button [routerLink]="['/admin/', vet.id]">Ver detalles</button>
+                    <button [routerLink]="['/admin/update/', vet.id]" id="editarBtn">Editar</button>
+                    <button id="eliminarBtn" (click)="eliminarVeterinario(vet)">Eliminar</button>
+                  </td>
+                  
               </tr>
  
         </tbody>

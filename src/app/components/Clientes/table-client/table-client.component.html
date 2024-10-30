@@ -26,15 +26,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let client of filteredClientes">
-                <td>{{ client.nombre }}</td>
-                <td>{{ client.cedula }}</td>
-                <td>
-                  <button [routerLink]="['/client/', client.id]">Ver detalles</button>
-                  <button [routerLink]="['/client/update/', client.id]" id="editarBtn">Editar</button>
-                  <button id="eliminarBtn" (click)="eliminarCliente(client)">Eliminar</button>
-                </td>
-              </tr>
+          <tr *ngFor="let client of filteredClientes">
+            <td>{{ client.nombre }}</td>
+            <td>{{ client.cedula }}</td>
+            <td>
+              <button [routerLink]="['/client/', client.id]" id="verDetallesClienteBtn_{{ client.id }}">Ver detalles</button>
+              <button [routerLink]="['/client/update/', client.id]" id="editarClienteBtn_{{ client.id }}">Editar</button>
+              <button id="eliminarClienteBtn_{{ client.id }}" (click)="eliminarCliente(client)">Eliminar</button>
+            </td>
+          </tr>
+          
  
         </tbody>
     </table>
