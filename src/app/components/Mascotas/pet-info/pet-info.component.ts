@@ -16,11 +16,14 @@ import { HttpClientModule } from '@angular/common/http';
 export class PetInfoComponent {
   selectedPet ?: Mascota;
   mascotaID ?: number = 0; 
+  returnUrl: string = '/vet/pets'; // Valor por defecto
 
   constructor(private petService: PetService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.mascotaID = Number(this.route.snapshot.paramMap.get('id'));
+    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || this.returnUrl; // Captura `returnUrl`
+
     this.petService.findById(this.mascotaID).subscribe(
       (pet) => {
         this.selectedPet = pet;

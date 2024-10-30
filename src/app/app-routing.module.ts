@@ -58,6 +58,7 @@ export const routes: Routes = [
   { path: 'client/portal', component: ClientPortalPageComponent },
   { path: 'client/:id', component: ClientInfoPageComponent},
   { path: 'client/update/:id', component: UpdateClientFormPageComponent},
+  { path: 'client/pet/:id', component: PetInfoPageComponent },
 
   { path: 'admin/form', component: AdminFormPageComponent},
   { path: 'admin/login', component: AdminLoginPageComponent},
