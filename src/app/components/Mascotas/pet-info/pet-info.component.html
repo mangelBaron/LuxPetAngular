@@ -14,11 +14,11 @@
         <p class="form_group"><strong>Estado: </strong> <span>{{ selectedPet?.estado }}</span></p>
   
         <!-- Detalles del dueño -->
-        <p class="form_group"><strong>Dueño: </strong> <span>{{ selectedPet?.cliente?.nombre }}</span></p>
+        <p class="form_group"><strong>Dueño: </strong> <span>{{ duenio?.nombre }}</span></p>
   
         <!-- Botón de volver -->
         <div id="botones">
-          <a [routerLink]="[returnUrl]" class="btn"><strong>Volver</strong></a>
+          <a (click)="goBack()" class="btn"><strong>Volver</strong></a>
         </div>        
       </div>
     </div>

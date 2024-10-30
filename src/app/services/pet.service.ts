@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Mascota } from '../model/mascota';
 import { Observable } from 'rxjs';
+import { Cliente } from '../model/cliente';
 
 @Injectable({
   providedIn: 'root'
@@ -48,5 +49,11 @@ export class PetService {
     const params = new HttpParams().set('clienteSeleccionado', clienteSeleccionado);
     return this.http.put<Mascota>(url, mascota, { params });
 }
+
+findClient(id: number): Observable<Cliente>{
+  return this.http.get<Cliente>('http://localhost:8090/mascota/duenio/'+id);
+}
+
+
 
 }

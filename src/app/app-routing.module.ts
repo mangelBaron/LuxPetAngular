@@ -34,6 +34,7 @@ import { UpdatePetFormComponent } from './components/Mascotas/update-pet-form/up
 import { UpdatePetFormPageComponent } from './pages/Pet-Pages/update-pet-form-page/update-pet-form-page.component';
 import { AdminFormPageComponent } from './pages/Admin-pages/admin-form-page/admin-form-page.component';
 import { UpdateVetFormComponent } from './components/Admin/update-vet-form/update-vet-form.component';
+import { PetInfoComponent } from './components/Mascotas/pet-info/pet-info.component';
 
 // Definir las rutas
 export const routes: Routes = [
@@ -58,7 +59,7 @@ export const routes: Routes = [
   { path: 'client/portal', component: ClientPortalPageComponent },
   { path: 'client/:id', component: ClientInfoPageComponent},
   { path: 'client/update/:id', component: UpdateClientFormPageComponent},
-  { path: 'client/pet/:id', component: PetInfoPageComponent },
+  { path: 'client/pet/:id', component: PetInfoComponent },
 
   { path: 'admin/form', component: AdminFormPageComponent},
   { path: 'admin/login', component: AdminLoginPageComponent},
