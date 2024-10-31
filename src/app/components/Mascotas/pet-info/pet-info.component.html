@@ -7,14 +7,14 @@
         <img [src]="selectedPet.foto" alt="Foto" class="form_style" *ngIf="selectedPet">
   
         <!-- Detalles de la mascota -->
-        <p class="form_group"><strong>Nombre: </strong> <span>{{ selectedPet?.nombre }}</span></p>
-        <p class="form_group"><strong>Raza: </strong> <span>{{ selectedPet?.raza }}</span></p>
-        <p class="form_group"><strong>Edad: </strong> <span>{{ selectedPet?.edad }}</span></p>
-        <p class="form_group"><strong>Enfermedad: </strong> <span>{{ selectedPet?.enfermedad }}</span></p>
-        <p class="form_group"><strong>Estado: </strong> <span>{{ selectedPet?.estado }}</span></p>
+        <p id="nombreMascota" class="form_group"><strong>Nombre: </strong> <span>{{ selectedPet?.nombre }}</span></p>
+        <p  id="razaMascota" class="form_group"><strong>Raza: </strong> <span>{{ selectedPet?.raza }}</span></p>
+        <p  id="edadMascota" class="form_group"><strong>Edad: </strong> <span>{{ selectedPet?.edad }}</span></p>
+        <p  id="enfermedadMascota" class="form_group"><strong>Enfermedad: </strong> <span>{{ selectedPet?.enfermedad }}</span></p>
+        <p  id="estadoMascota" class="form_group"><strong>Estado: </strong> <span>{{ selectedPet?.estado }}</span></p>
   
         <!-- Detalles del dueño -->
-        <p class="form_group"><strong>Dueño: </strong> <span>{{ duenio?.nombre }}</span></p>
+        <p id="duenioMascota" class="form_group"><strong>Dueño: </strong> <span>{{ duenio?.nombre }}</span></p>
 
         <table>
           <thead>
@@ -26,9 +26,9 @@
           </thead>
           <tbody>
             <tr *ngFor="let tratamiento of tratamientoList">
-              <td>{{ tratamiento.veterinario?.nombre }}</td>
-              <td>{{ tratamiento.droga?.nombre }}</td>
-              <td> {{ tratamiento.fecha }} </td>
+              <td class="liTratamientoVet">{{ tratamiento.veterinario?.nombre }}</td>
+              <td class="liTratamientoDroga">{{ tratamiento.droga?.nombre }}</td>
+              <td class="liTratamientoFecha"> {{ tratamiento.fecha }} </td>
 
             </tr>
           </tbody>

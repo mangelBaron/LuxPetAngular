@@ -5,7 +5,7 @@
 
   <div id="block">
       <div id="searchBar">
-          <input type="text" placeholder="Buscar una mascota" [(ngModel)]="searchMascota" (input)="filterMascotas()" />
+          <input id="barraDeBusqueda" type="text" placeholder="Buscar una mascota" [(ngModel)]="searchMascota" (input)="filterMascotas()" />
       </div>
 
       <div id="botonAgregar">
@@ -27,9 +27,9 @@
                   <td>{{ mascota.nombre }}</td>
                   <td>{{ mascota.raza }}</td>
                   <td>
-                    <a [routerLink]="['/vet/pet/', mascota.id]"><button>Ver detalles</button></a>
+                    <a [routerLink]="['/vet/pet/', mascota.id]"><button id="verDetalles">Ver detalles</button></a>
                     <a [routerLink]="['/vet/pet/update/', mascota.id]"><button id="editarBtn">Editar</button></a>
-                    <button id="editarBtn" (click)="goToTratamientoForm(mascota)">Tratamiento</button>
+                    <button id="tratamiento" (click)="goToTratamientoForm(mascota)">Tratamiento</button>
                     <button id="eliminarBtn" (click)="eliminarMascota(mascota)">Eliminar</button>
                   </td>
               </tr>
