@@ -8,8 +8,8 @@
     <table>
         <thead>
             <tr>
-                <th>Foto</th>
                 <th>Nombre</th>
+                <th>Raza</th>
                 <th>Accion</th>
             </tr>
         </thead>
@@ -18,7 +18,7 @@
                 <td>{{ mascota.nombre }}</td>
                 <td>{{ mascota.raza }}</td>
                 <td>
-                  <button [routerLink]="['/vet/pet/', mascota.id]" id="verDetallesBtn_{{ mascota.id }}">Ver detalles</button>
+                  <button [routerLink]="['/client/pet/', mascota.id]">Ver detalles</button>
                 </td>
               </tr>
         </tbody>

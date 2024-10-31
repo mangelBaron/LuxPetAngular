@@ -27,9 +27,10 @@
                   <td>{{ mascota.nombre }}</td>
                   <td>{{ mascota.raza }}</td>
                   <td>
-                      <a [routerLink]="['/vet/pet/', mascota.id]"><button>Ver detalles</button></a>
-                      <a [routerLink]="['/vet/pet/update/', mascota.id]"><button id="editarBtn">Editar</button></a>
-                      <button id="eliminarBtn" (click)="eliminarMascota(mascota)">Eliminar</button>
+                    <a [routerLink]="['/vet/pet/', mascota.id]"><button>Ver detalles</button></a>
+                    <a [routerLink]="['/vet/pet/update/', mascota.id]"><button id="editarBtn">Editar</button></a>
+                    <button id="editarBtn" (click)="goToTratamientoForm(mascota)">Tratamiento</button>
+                    <button id="eliminarBtn" (click)="eliminarMascota(mascota)">Eliminar</button>
                   </td>
               </tr>
           </tbody>

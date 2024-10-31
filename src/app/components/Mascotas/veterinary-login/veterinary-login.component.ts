@@ -35,7 +35,7 @@ export class VeterinaryLoginComponent {
         (vet) => {
           if (vet) {
             console.log('Login exitoso', vet);
-            this.router.navigate(['vet/pets']);
+            this.router.navigate(['vet/pets'], { state: { veterinarioId: vet.id } });
           } else {
             console.error('Error al iniciar sesión', vet);
             this.error = 'Error al iniciar sesión';

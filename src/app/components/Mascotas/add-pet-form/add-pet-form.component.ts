@@ -51,6 +51,7 @@ registroExitoso: any;
       (error) => {
         console.error('Error al obtener clientes:', error);
       }
+
     );
 
     this.mascotaService.findAll().subscribe(

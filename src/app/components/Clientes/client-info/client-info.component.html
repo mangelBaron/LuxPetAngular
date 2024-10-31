@@ -29,7 +29,10 @@
                     <td>{{mascota.nombre}}</td>
                     <td>{{mascota.raza}}</td>
                     <td>
-                        <a [routerLink]="['/mascota/find', mascota?.id]" class="btn"><strong>Ver detalles</strong></a>
+                        <a [routerLink]="['/vet/pet', mascota.id]" [queryParams]="{ returnUrl: '/cliente/portal' }" class="btn">
+                            <strong>Ver detalles</strong>
+                          </a>
+                          
                     </td>
                 </tr>
             </tbody>

@@ -1,0 +1,34 @@
+<main>
+    <div id="container">
+        <div id="formulario-container" class="form_area">
+          
+     
+          
+            <h2 class="title">Agregar veterinario</h2>
+            <form (ngSubmit)="agregarTratamiento(formularioTratamiento, drogaSeleccionada)"> 
+    
+                <div class="form_group">
+                    <label for="fecha">Fecha:</label>
+                    <input [(ngModel)]="formularioTratamiento.fecha" name="fecha" type="date" id="fecha" required class="form_style">
+                  </div>
+                  
+                  <div class="form_group">
+                    <label for="droga">Droga:</label>
+                    <select id="drogas" [(ngModel)]="drogaSeleccionada" name="drogaSeleccionada"  required class="form_style">
+                      <option *ngFor="let droga of drogaList" [value]="droga.id">{{ droga.nombre }} - {{ droga.precioVenta }}</option>
+                    </select>
+                  </div>
+
+                
+
+
+                  
+                
+                  
+                  <button type="submit" class="btn btn-primary">Agregar</button>
+            </form>
+        </div>
+    </div>
+    
+    </main>
+    

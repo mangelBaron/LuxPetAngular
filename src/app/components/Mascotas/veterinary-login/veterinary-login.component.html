@@ -1,8 +1,8 @@
 <div class="center-container">  
     <div class="container">
-        <div class="heading">Iniciar Sesión</div>
+        <div class="heading">Veterinario</div>
         <form (ngSubmit)="verificarLogin()" class="form">
-            <input required class="input" type="text" [(ngModel)]="usuario.cedula" name="cedula" id="cedula" placeholder="Ingresa tu cédula">
+            <input required class="input" type="text" [(ngModel)]="usuario.cedula" name="cedula" id="cedula" placeholder="Ingrese su cédula">
             <input required class="input" type="password" [(ngModel)]="usuario.password" name="password" id="password" placeholder="Ingresa su contraseña">
             
             <button class="login-button" type="submit">Iniciar Sesión</button>

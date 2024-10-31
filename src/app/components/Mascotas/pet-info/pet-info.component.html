@@ -1,25 +1,43 @@
 <main>
   <div id="container">
       <div id="info" class="form_area">
-          <h1 class="title">Información de la mascota</h1>
+        <h1 class="title">Información de la mascota</h1>
+  
+        <!-- Imagen de la mascota -->
+        <img [src]="selectedPet.foto" alt="Foto" class="form_style" *ngIf="selectedPet">
+  
+        <!-- Detalles de la mascota -->
+        <p class="form_group"><strong>Nombre: </strong> <span>{{ selectedPet?.nombre }}</span></p>
+        <p class="form_group"><strong>Raza: </strong> <span>{{ selectedPet?.raza }}</span></p>
+        <p class="form_group"><strong>Edad: </strong> <span>{{ selectedPet?.edad }}</span></p>
+        <p class="form_group"><strong>Enfermedad: </strong> <span>{{ selectedPet?.enfermedad }}</span></p>
+        <p class="form_group"><strong>Estado: </strong> <span>{{ selectedPet?.estado }}</span></p>
+  
+        <!-- Detalles del dueño -->
+        <p class="form_group"><strong>Dueño: </strong> <span>{{ duenio?.nombre }}</span></p>
 
-          <!-- Imagen de la mascota -->
-          <img [src]="selectedPet.foto" alt="Foto" class="form_style" *ngIf="selectedPet">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Veterinario</th>
+              <th scope="col">Droga</th>
+              <th scope="col">Fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let tratamiento of tratamientoList">
+              <td>{{ tratamiento.veterinario?.nombre }}</td>
+              <td>{{ tratamiento.droga?.nombre }}</td>
+              <td> {{ tratamiento.fecha }} </td>
 
-          <!-- Detalles de la mascota -->
-          <p class="form_group"><strong>Nombre: </strong> <span>{{ selectedPet?.nombre }}</span></p>
-          <p class="form_group"><strong>Raza: </strong> <span>{{ selectedPet?.raza }}</span></p>
-          <p class="form_group"><strong>Edad: </strong> <span>{{ selectedPet?.edad }}</span></p>
-          <p class="form_group"><strong>Enfermedad: </strong> <span>{{ selectedPet?.enfermedad }}</span></p>
-          <p class="form_group"><strong>Estado: </strong> <span>{{ selectedPet?.estado }}</span></p>
-
-          <!-- Detalles del dueño -->
-          <p class="form_group"><strong>Dueño: </strong> <span>{{ selectedPet?.cliente?.nombre }}</span></p>
-
-          <!-- Botón de volver -->
-          <div id="botones">
-              <a [routerLink]="['/vet/pets']" class="btn"><strong>Volver</strong></a>
-          </div>
+            </tr>
+          </tbody>
+        </table>
+  
+        <!-- Botón de volver -->
+        <div id="botones">
+          <a (click)="goBack()" class="btn"><strong>Volver</strong></a>
+        </div>        
       </div>
   </div>
 </main>

@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+   
     border-radius: 12px;
     width: 50%;
     
@@ -106,7 +107,6 @@ button:hover{
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    
     width: 80%;
     margin: 0 auto; /* Centrar el contenedor en la página */
   }
@@ -117,12 +117,12 @@ button:hover{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #e4d9bc;
+    background-color: #EDDCD9;
     width: 100%;
     max-width: 600px; /* Limitar el ancho máximo */
     border: 2px solid #264143;
     border-radius: 20px;
-    box-shadow: 3px 4px 0px 1px #d6b866;
+    box-shadow: 3px 4px 0px 1px #E99F4C;
     padding: 20px;
   }
   
@@ -132,37 +132,28 @@ button:hover{
     font-weight: 900;
     font-size: 2em;
     margin-top: 20px;
-    font-family: "Nunito", sans-serif;
   }
   
   /* Ajustar el tamaño y centrado de los campos de entrada */
   .form_group {
     display: flex;
-    justify-content: center ;
+    flex-direction: column;
     align-items: center; /* Centrar los elementos dentro de cada grupo de formulario */
     margin: 10px;
     width: 100%; /* Hacer que los grupos de formulario ocupen todo el ancho disponible */
-    font-family: "Nunito", sans-serif;
-    font-size: 20px;
-}
-
-.form_group strong {
-padding-right: 10px;
-}
+  }
  
   .form_style {
     outline: none;
     border: 2px solid #264143;
-    box-shadow: 3px 4px 0px 1px #d6b866;
+    box-shadow: 3px 4px 0px 1px #E99F4C;
     width: 100%; /* Asegurar que los campos de entrada ocupen todo el ancho del grupo */
     max-width: 500px; /* Limitar el ancho máximo de los campos */
     padding: 12px 10px;
     border-radius: 4px;
     font-size: 15px;
-    
     align-items: center;
     text-align: center;
-    
   }
   
   /* Ajustar el tamaño y centrado de los botones */
@@ -173,10 +164,10 @@ padding-right: 10px;
     width: 100%; /* Hacer que el botón ocupe todo el ancho disponible */
     max-width: 500px; /* Limitar el ancho máximo del botón */
     font-size: 15px;
-    background: #ddc47d;
+    background: #f1b615;
     border-radius: 10px;
     font-weight: 800;
-    box-shadow: 3px 3px 0px 0px #d6b866;
+    box-shadow: 3px 3px 0px 0px #E99F4C;
   }
   
   #botones {
@@ -201,7 +192,6 @@ padding-right: 10px;
     cursor: pointer;
     max-width: 200px; /* Limitar el ancho máximo de los botones */
     margin: 0; /* Eliminar márgenes extra */
-    justify-content: space-between;
 }
 
 #botones a:hover,
@@ -209,33 +199,4 @@ padding-right: 10px;
     background-color: #ffffff;
     color: rgb(0, 0, 0); /* Cambiar el color del texto al hacer hover */
 }
-#botones a, #botones button {
-    font-size: 16px; /* Ajusta el tamaño de la fuente aquí */
-    padding: 8px 12px; /* Ajusta el padding aquí */
-    max-width: 180px; /* Ajusta el ancho máximo del botón si es necesario */
-}
 
-main table{
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-    font-family: "Nunito", sans-serif;
-}
-
-
-main th{
-    font-family: "Nunito", sans-serif;
-    border: 2px solid black;
-    font-size: 20px;
-    margin-bottom: 20px;
-    background-color: #ddc47d;
-}
-
-main td{
-    font-family: "Nunito", sans-serif;
-    border: 2px solid black;
-    font-size: 20px;
-    text-align: center;
-    padding: 10px;
-    background-color: #e4d9bc;
-}
