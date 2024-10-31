@@ -2,35 +2,38 @@
        
             
         
-    <div id="formulario-container" class="form_area">
-        <h2 class="title">Agregar Dueño</h2>
-        <form (ngSubmit)="crearCliente()" #clienteForm="ngForm">
-            <div class="form_group">
-              <label for="nombre">Nombre:</label>
-              <input [(ngModel)]="formularioCliente.nombre" name="nombre" type="text" id="nombre" placeholder="Ingresa el nombre" required class="form_style">
-            </div>
-          
-            <div class="form_group">
-              <label for="cedula">Cedula:</label>
-              <input [(ngModel)]="formularioCliente.cedula" name="cedula" type="text" id="cedula" placeholder="Ingresa la cedula" required class="form_style">
-            </div>
-          
-            <div class="form_group">
-              <label for="correo">Correo:</label>
-              <input [(ngModel)]="formularioCliente.correo" name="correo" type="email" id="correo" placeholder="Ingresa el correo" required class="form_style">
-            </div>
-          
-            <div class="form_group">
-              <label for="celular">Celular:</label>
-              <input [(ngModel)]="formularioCliente.celular" name="celular" type="number" id="celular" placeholder="Ingresa el número celular" class="form_style">
-            </div>
-          
-            <div id="botones">
-              <a [routerLink]="['/clients']" class="btn">Volver</a>
-              <div id="enviarBtn">
-                <button type="submit" id="crearClienteBtn" class="btn">Crear</button>
-              </div>
-            </div>
-          </form>
+  <div id="formulario-container" class="form_area">
+      <h2 class="title">Agregar Dueño</h2>
+
+<form (ngSubmit)="crearCliente()">
+  <div class="form_group">
+    <label for="nombre">Nombre:</label>
+    <input [(ngModel)]="formularioCliente.nombre" name="nombre" type="text" id="nombre" placeholder="Ingresa el nombre" required class="form_style">
+  </div>
+
+  <div class="form_group">
+    <label for="cedula">Cédula:</label>
+    <input [(ngModel)]="formularioCliente.cedula" name="cedula" type="text" id="cedula" placeholder="Ingresa la cédula" required class="form_style">
+  </div>
+
+  <div class="form_group">
+    <label for="correo">Correo:</label>
+    <input [(ngModel)]="formularioCliente.correo" name="correo" type="email" id="correo" placeholder="Ingresa el correo" required class="form_style">
+    <div *ngIf="errorCorreo" style="color: red;">
+      <small>Formato de correo no válido. Ejemplo: usuariodominio.com.</small>
     </div>
+  </div>
+
+  <div class="form_group">
+    <label for="celular">Celular:</label>
+    <input [(ngModel)]="formularioCliente.celular" name="celular" type="number" id="celular" placeholder="Ingresa el número celular" class="form_style">
+  </div>
+
+  <div id="botones">
+    <a [routerLink]="['/clients']" class="btn">Volver</a>
+    <button id = "addClient" type="submit" class="btn">Crear</button>
+  </div>
+</form>
+
+</div>
 </div>

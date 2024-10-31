@@ -46,5 +46,12 @@ export class VeterinaryLoginComponent {
           console.error('Error al iniciar sesión', error);
         }
       );
+
+      this.limpiarCampos();
+    }
+
+    limpiarCampos() {
+      this.usuario.cedula = '';
+      this.usuario.password = '';
     }
 }

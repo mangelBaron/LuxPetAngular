@@ -95,7 +95,7 @@ export class AddTratamientoFormComponent {
             this.tratamientoService.addTratamiento(tratamiento).subscribe(
               (tratamiento) => {
                 console.log('Tratamiento agregado:', tratamiento);
-                this.router.navigate(['/admin'], { state: { tratamiento: tratamiento } });
+                this.router.navigate(['/vet/pets'], { state: { tratamiento: tratamiento } });
               },
               (error) => {
                 console.error('Error al agregar tratamiento:', error);
