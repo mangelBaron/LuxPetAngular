@@ -2,8 +2,9 @@
     <div class="container">
         <div class="heading">Iniciar Sesión</div>
         <form (ngSubmit)="verificarLogin()"  class="form">
-            <input required  [(ngModel)]="cedula" class="input" type="text" name="cedula" id="cedula" placeholder="Ingresa tu cédula">
-            
+            <input required [(ngModel)]="cedula" class="input" type="text" name="cedula" id="cedulaInput" placeholder="Ingresa tu cédula">
+            <input class="login-button" type="submit" id="iniciarSesionBtn" value="Iniciar Sesión">
+
             
             <div id="alerta" style="color: red;" *ngIf="error">
                 <p>{{ error }}</p>

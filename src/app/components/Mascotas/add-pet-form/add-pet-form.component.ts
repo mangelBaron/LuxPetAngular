@@ -34,6 +34,7 @@ export class AddPetFormComponent {
 
   clientList!: Cliente[];
   clienteSeleccionado: string = '';
+registroExitoso: any;
 
   constructor(
     private router: Router, 
