@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Mascota } from '../../../model/mascota';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { PetService } from '../../../services/pet.service';
 import { FormsModule } from '@angular/forms';
@@ -19,10 +19,15 @@ export class TablePetComponent {
 
   selectedMascota?: Mascota;  
   petList !: Mascota[];
+  veterinarioId: number = 0;
 
   constructor(
-    private petService: PetService
-    ) { }
+    private petService: PetService,
+    private router: Router  
+    ) { 
+      const navigation = this.router.getCurrentNavigation();
+      this.veterinarioId = navigation?.extras.state?.['veterinarioId'] ?? null;
+    }
 
     filteredMascotas: Mascota[] = [];  // Lista filtrada
     searchMascota: string = '';
@@ -56,6 +61,10 @@ export class TablePetComponent {
         mascota.nombre.toLowerCase().includes(this.searchMascota.toLowerCase()) ||
         mascota.raza.toLowerCase().includes(this.searchMascota.toLowerCase())
       );
+    }
+
+    goToTratamientoForm(mascota: Mascota): void {
+      this.router.navigate(['/vet/pet/tratamiento/form'], { state: { mascotaId: mascota.id, veterinarioId: this.veterinarioId } });
     }
   
 

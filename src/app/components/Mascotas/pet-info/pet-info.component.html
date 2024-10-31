@@ -15,6 +15,24 @@
   
         <!-- Detalles del dueño -->
         <p class="form_group"><strong>Dueño: </strong> <span>{{ duenio?.nombre }}</span></p>
+
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Veterinario</th>
+              <th scope="col">Droga</th>
+              <th scope="col">Fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let tratamiento of tratamientoList">
+              <td>{{ tratamiento.veterinario?.nombre }}</td>
+              <td>{{ tratamiento.droga?.nombre }}</td>
+              <td> {{ tratamiento.fecha }} </td>
+
+            </tr>
+          </tbody>
+        </table>
   
         <!-- Botón de volver -->
         <div id="botones">

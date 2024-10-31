@@ -33,5 +33,9 @@ export class TratamientoService {
     return this.http.put<Tratamiento>('http://localhost:8090/tratamiento/update/' + id, tratamiento);
   }
 
+  findTratamientosByPet(id: number): Observable<Tratamiento[]> {
+    return this.http.get<Tratamiento[]>('http://localhost:8090/tratamiento/findByMascota/' + id);
+  }
+
 
 }

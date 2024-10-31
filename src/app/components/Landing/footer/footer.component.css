@@ -149,4 +149,14 @@ footer{
     background: #e4405f;
     color: #fff;
   }
+
+  li a {
+    text-decoration: none;
+    color: #242331;
+    font-weight: bold;
+  }
+
+  li a:hover {
+    color: #f1f1f1;
+  }
   
