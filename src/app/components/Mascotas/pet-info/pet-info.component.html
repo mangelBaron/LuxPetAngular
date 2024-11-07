@@ -16,7 +16,7 @@
         <!-- Detalles del dueño -->
         <p id="duenioMascota" class="form_group"><strong>Dueño: </strong> <span>{{ duenio?.nombre }}</span></p>
 
-        <table>
+        <table *ngIf="tratamientoList && tratamientoList.length > 0">
           <thead>
             <tr>
               <th scope="col">Veterinario</th>

@@ -365,7 +365,7 @@ main p{
     padding-bottom: 10px;
     background-color: #ddc47d;
     border: 2px solid rgb(193, 163, 98); /* Estilo de .button */
-    border-radius: 34px; /* Estilo de .button */
+    border-radius:10px; /* Estilo de .button */
     cursor: pointer;
     position: relative; /* Estilo de .button */
     color: rgb(8, 8, 8); /* Estilo de .button */

@@ -6,6 +6,7 @@
             <input required class="input" type="password" [(ngModel)]="usuario.password" name="password" id="password" placeholder="Ingresa su contraseña">
             
             <button class="login-button" type="submit">Iniciar Sesión</button>
+            <p>Eres un cliente? <a [routerLink]="['/client/login']">Ingresa aquí</a></p>
             <div id="alerta" style="color: red;">
                 <p *ngIf="error">{{ error }}</p>
               </div>

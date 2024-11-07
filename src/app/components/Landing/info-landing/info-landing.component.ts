@@ -1,9 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-info-landing',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './info-landing.component.html',
   styleUrl: './info-landing.component.css'
 })

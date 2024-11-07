@@ -1,33 +1,31 @@
 <nav>
+
     <div class="logo">
         <h4>Lux<span>Pet</span></h4>
     </div>  
 
-
     <div id="infoCliente">
+
 <div class="card-client">
 
-<ng-container *ngIf="cliente">
-  <p class="name-client">
-    <span>{{ cliente?.nombre }}</span>
-  </p>
-    <p class="form_group">
-        <span>{{ cliente?.cedula }}</span>
-    </p>
-    <p class="form_group">
-        <span>{{ cliente?.correo }}</span>
-    </p>
-    <p class="form_group">
-        <span>{{ cliente?.celular }}</span>
-    </p>
-    </ng-container>
+<p>Bienvenido a Luxpet</p>
 
     <!-- Añade iconos o enlaces para redes sociales si es necesario -->
     <div class="social-media">
-        <a href="#" class="tooltip-social"> <!-- Enlace de ejemplo -->
-            <svg> <!-- Ejemplo de SVG para red social --> </svg>
-            <span class="tooltip-social">Tooltip text</span>
-        </a>
+        <ng-container *ngIf="cliente">
+            <p class="form_group">
+              <span>{{ cliente?.nombre }}</span>
+            </p>
+              <p class="form_group">
+                  <span>{{ cliente?.cedula }}</span>
+              </p>
+              <p class="form_group">
+                  <span>{{ cliente?.correo }}</span>
+              </p>
+              <p class="form_group">
+                  <span>{{ cliente?.celular }}</span>
+              </p>
+              </ng-container>
         <!-- Más enlaces si es necesario -->
     </div>
     

@@ -38,7 +38,7 @@ main {
           font-size: 20px;
           text-align: center;
           padding: 10px;
-          background-color: #f2ebdb;
+          background-color: #e4d9bc;
       }
   
       #detallesMascota{
@@ -81,4 +81,19 @@ main {
   border: 1px solid #ccc;
   border-radius: 8px;
   font-family: "Nunito", sans-serif;
+}
+
+button{
+  font-family: "Nunito", sans-serif;
+  align-items: center;
+  font-size: 16px;
+  padding: 8px;
+  background-color: #ddc47d;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer; 
+}
+
+main button:hover{
+  background-color: #efefef;
 }
