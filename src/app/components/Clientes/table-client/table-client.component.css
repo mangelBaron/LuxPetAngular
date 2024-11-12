@@ -266,3 +266,29 @@ tr th {
   text-align: center; /* Centra horizontalmente el texto */
     vertical-align: middle;
 }
+
+#editarClienteBtn{
+  font-family: "Nunito", sans-serif;
+  align-items: center;
+  font-size: 16px;
+  padding: 8px;
+  background-color: #ddc47d;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer; 
+  color:#242331;
+  text-decoration: none;
+
+}
+
+
+#editarBtn:hover{
+  background-color: #50888b;
+
+}
+
+#eliminarCienteBtn:hover{
+  background-color: rgb(240, 50, 88);
+  font-family: "Nunito", sans-serif;
+
+}
