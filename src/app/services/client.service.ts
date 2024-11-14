@@ -43,7 +43,7 @@ export class ClientService {
   }
 
   loginCliente(user: User): Observable<String> {
-    return this.http.post('http://localhost:8090/login/', user,{responseType: 'text'}); 
+    return this.http.post('http://localhost:8090/cliente/login', user,{responseType: 'text'}); 
   }
 
 }

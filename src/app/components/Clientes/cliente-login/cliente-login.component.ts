@@ -5,6 +5,7 @@ import { Router, RouterLink } from '@angular/router';
 import { LoginService } from '../../../services/login.service';
 import { ClientService } from '../../../services/client.service';
 import { User } from '../../../model/user';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class ClienteLoginComponent {
 
   constructor(
     private clientService : ClientService,
+    private http: HttpClient,
     private router : Router
   ){}
 
@@ -29,25 +31,39 @@ export class ClienteLoginComponent {
   }
   
   error : string = '';
+  cliente : any;
 
-  verificarLogin(): void {
-    this.clientService.loginCliente(this.formUser).subscribe(
-      (cliente) => {
-        if (cliente) {
-          localStorage.setItem('token', String(cliente))
-          console.log('Cliente encontrado:', cliente);
-          this.router.navigate(['/client/portal'], { state: { cliente: cliente } });
-        } else {
-          console.error('Cliente no encontrado - ' + this.cedula + " ", cliente);
-
-          
-          this.error = 'Cliente no encontrado';
+  verificarLogin(cedula: string) {
+    this.http.post('http://localhost:8090/cliente/login', { cedula }, { responseType: 'text' })
+      .subscribe(
+        response => {
+          if (this.isJWT(response)) {
+            console.log('Inicio de sesión exitoso', response);
+            this.router.navigate(['/client/portal'], { state: { cliente: this.cliente } });
+          } else {
+            try {
+              const jsonResponse = JSON.parse(response);
+              console.log('Inicio de sesión exitoso', jsonResponse);
+              this.router.navigate(['/client/portal'], { state: { cliente: this.cliente } });
+            } catch (e) {
+              console.error('Error al analizar la respuesta:', e);
+              alert('Ocurrió un error al procesar la respuesta del servidor.');
+            }
+          }
+        },
+        (error: HttpErrorResponse) => {
+          console.error('Error al iniciar sesión:', error);
+          if (error.status === 401) {
+            alert('Credenciales incorrectas. Por favor, inténtelo de nuevo.');
+          } else {
+            alert('Ocurrió un error. Por favor, inténtelo de nuevo más tarde.');
+          }
         }
-      },
-      (error) => {
-        console.error('Error al iniciar sesión:' + this.cedula + " ", error);
-        this.error = 'Error al iniciar sesión';
-      }
-    );
+      );
+  }
+  
+  isJWT(response: string): boolean {
+    const jwtPattern = /^[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+$/;
+    return jwtPattern.test(response);
   }
 }
