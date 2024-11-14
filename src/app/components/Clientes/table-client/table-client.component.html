@@ -32,7 +32,7 @@
             <td>
               <button [routerLink]="['/client/', client.id]" id="verDetallesClienteBtn_{{ client.id }}">Ver detalles</button>
               <button [routerLink]="['/client/update/', client.id]" id="editarClienteBtn_{{ client.id }}">Editar</button>
-              <button id="eliminarClienteBtn_{{ client.id }}" (click)="eliminarCliente(client)">Eliminar</button>
+              <button id="eliminarClienteBtn"{{ client.id }} (click)="eliminarCliente(client)">Eliminar</button>
             </td>
           </tr>
           

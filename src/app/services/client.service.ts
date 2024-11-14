@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cliente } from '../model/cliente';
 import { Mascota } from '../model/mascota';
+import { User } from '../model/user';
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +40,10 @@ export class ClientService {
 
   getPets(id: number): Observable<Mascota[]>{
     return this.http.get<Mascota[]>('http://localhost:8090/cliente/mascotas/' + id);
+  }
+
+  loginCliente(user: User): Observable<String> {
+    return this.http.post('http://localhost:8090/login/', user,{responseType: 'text'}); 
   }
 
 }

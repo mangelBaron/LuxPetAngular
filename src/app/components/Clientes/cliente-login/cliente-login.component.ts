@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { LoginService } from '../../../services/login.service';
+import { ClientService } from '../../../services/client.service';
+import { User } from '../../../model/user';
 
 
 @Component({
@@ -15,18 +17,24 @@ import { LoginService } from '../../../services/login.service';
 export class ClienteLoginComponent {
 
   constructor(
-    private loginService : LoginService,
+    private clientService : ClientService,
     private router : Router
   ){}
 
   cedula : string = '';
+
+  formUser: User = {
+    cedula: '',
+    password: ''
+  }
   
   error : string = '';
 
   verificarLogin(): void {
-    this.loginService.loginCliente(this.cedula).subscribe(
+    this.clientService.loginCliente(this.formUser).subscribe(
       (cliente) => {
         if (cliente) {
+          localStorage.setItem('token', String(cliente))
           console.log('Cliente encontrado:', cliente);
           this.router.navigate(['/client/portal'], { state: { cliente: cliente } });
         } else {

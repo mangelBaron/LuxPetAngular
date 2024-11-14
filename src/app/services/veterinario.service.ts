@@ -35,6 +35,10 @@ export class VeterinarioService {
     return this.http.put<Veterinario>('http://localhost:8090/veterinario/update/' + id, veterinario);
   }
 
+  loginVeterinario(veterinario: Veterinario): Observable<Veterinario> {
+    return this.http.post<Veterinario>('http://localhost:8090/veterinario/login', veterinario);
+  }
+
 
 
 
